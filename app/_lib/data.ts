@@ -59,7 +59,7 @@ export const projects: Project[] = [
     longDescription:
       "SMB Fest Spectro 2024 is an annual creative festival organized by SMK Sumbangsih Multimedia. The event was built around the theme 'Exploring the Diversity of Wonderland Indonesia,' celebrating Indonesia's rich cultural heritage through a fictional storytelling approach. Inspired by the perspective of extraterrestrial explorers discovering the beauty of Indonesia, the visual identity was designed to spark curiosity, encourage exploration, and present cultural diversity in a fresh and engaging way. As part of the creative team, I contributed from the concept development stage through the execution of the visual identity. My responsibilities included brainstorming the event theme, developing the art direction, creating custom illustrations, and designing promotional materials across both print and digital platforms. By maintaining a consistent visual language throughout the campaign, the project demonstrates my approach to combining storytelling, branding, and illustration into a cohesive design system that communicates both information and experience.",
     tools: ["Adobe Illustrator", "Adobe Photoshop", "Canva"],
-    coverImage: "/images/projects/smb-fest-spectro-2024/thumbnail.webp",
+    coverImage: "/projects/gambarproject/SMBFest/thumbnail.webp",
     images: [
       "/projects/gambarproject/SMBFest/gambar1.webp",
       "/projects/gambarproject/SMBFest/gambar2.webp",
@@ -69,7 +69,7 @@ export const projects: Project[] = [
       "/projects/gambarproject/SMBFest/gambar6.webp",
       "/projects/gambarproject/SMBFest/gambar7.webp",
     ],
-    featured: false,
+    featured: true,
     color: "#0ea5e9", // Brand Identity (Sky-500)
     galleryLayout: "square-grid",
   },
@@ -136,7 +136,7 @@ export const projects: Project[] = [
       "/projects/gambarproject/BURGERIN/burgerin.webp",
       "/projects/gambarproject/BURGERIN/burgerin5.webp"
     ],
-    featured: true,
+    featured: false,
     color: "#0284c7", // Logo Design (Sky-600)
   },
   {
