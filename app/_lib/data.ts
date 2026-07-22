@@ -67,9 +67,8 @@ export const projects: Project[] = [
       "/images/projects/smb-fest-spectro-2024/gambar4.webp",
       "/images/projects/smb-fest-spectro-2024/gambar5.webp",
       "/images/projects/smb-fest-spectro-2024/gambar6.webp",
-      "/images/projects/smb-fest-spectro-2024/gambar7.webp",
     ],
-    featured: true,
+    featured: false,
     color: "#0ea5e9", // Brand Identity (Sky-500)
     galleryLayout: "square-grid",
   },
@@ -114,7 +113,7 @@ export const projects: Project[] = [
       "/projects/gambarproject/SASILHijab/SasilHijab4.webp",
       "/projects/gambarproject/SASILHijab/SasilHijab5.webp"
     ],
-    featured: false,
+    featured: true,
     color: "#0d9488", // Print Design (Teal-600)
     galleryLayout: "square-grid"
   },
