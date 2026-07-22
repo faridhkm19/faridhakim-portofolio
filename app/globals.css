@@ -1,0 +1,370 @@
+@import "tailwindcss";
+
+/* ============================================================
+   DESIGN SYSTEM — Farid Hakim Portfolio
+   Tailwind v4 configuration via @theme
+   ============================================================ */
+
+@theme {
+  /* === Typography === */
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* === Color Palette — Monochromatic + Gold accent === */
+
+  /* Neutrals */
+  --color-ink-950: #0a0a0a;
+  --color-ink-900: #141414;
+  --color-ink-800: #1e1e1e;
+  --color-ink-700: #2e2e2e;
+  --color-ink-600: #404040;
+  --color-ink-500: #737373;
+  --color-ink-400: #a0a0a0;
+  --color-ink-300: #c4c4c4;
+  --color-ink-200: #e0e0e0;
+  --color-ink-100: #f0f0f0;
+  --color-ink-50: #fafafa;
+
+  /* Gold / Warm Yellow accent */
+  --color-lime-accent: hsl(45, 95%, 65%);
+  --color-lime-accent-dark: hsl(43, 90%, 58%);
+  --color-lime-accent-light: hsl(47, 90%, 75%);
+
+  /* Semantic tokens — light mode defaults */
+  --color-bg: hsl(0, 0%, 97%); /* off-white, sedikit abu */
+  --color-bg-secondary: #f0f0f0;
+  --color-bg-card: #ffffff;
+  --color-fg: #0a0a0a;
+  --color-fg-muted: #737373;
+  --color-fg-subtle: #a0a0a0;
+  --color-border: #e0e0e0;
+  --color-border-subtle: #f0f0f0;
+
+  /* === Spacing Scale === */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+
+  /* === Border Radius === */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-full: 9999px;
+
+  /* === Transitions === */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================================
+   DARK MODE OVERRIDES
+   ============================================================ */
+.dark {
+  --color-bg: #0a0a0a;
+  --color-bg-secondary: #141414;
+  --color-bg-card: #1a1a1a;
+  --color-fg: #fafafa;
+  --color-fg-muted: #a0a0a0;
+  --color-fg-subtle: #737373;
+  --color-border: #2e2e2e;
+  --color-border-subtle: #1e1e1e;
+
+  /* Gold / Warm Yellow accent (Dark Mode) */
+  --color-lime-accent: hsl(45, 90%, 60%);
+  --color-lime-accent-dark: hsl(43, 88%, 52%);
+  --color-lime-accent-light: hsl(47, 85%, 70%);
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-body);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  /* Use native cursor by default */
+}
+
+/* Hide native cursor when hovering over elements that use the custom cursor */
+[data-cursor="view"] {
+  cursor: none !important;
+}
+
+/* Show native cursor on touch/mobile */
+@media (hover: none) {
+  [data-cursor="view"] {
+    cursor: auto !important;
+  }
+}
+
+/* Text selection style */
+::selection {
+  background-color: var(--color-lime-accent);
+  color: var(--color-ink-950);
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-lime-accent);
+}
+
+/* ============================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================ */
+.font-heading {
+  font-family: var(--font-heading);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* ============================================================
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-32px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: -200% center;
+  }
+
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes cursor-pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* ============================================================
+   VIEW TRANSITIONS
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 300ms;
+  }
+
+  ::view-transition-old(project-image) {
+    animation: 300ms ease-in both fade-out;
+  }
+
+  ::view-transition-new(project-image) {
+    animation: 400ms ease-out 100ms both fade-in;
+  }
+
+  @keyframes fade-out {
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+
+  /* Navbar stays fixed during transitions */
+  ::view-transition-group(site-navbar) {
+    animation: none;
+    z-index: 100;
+  }
+
+  ::view-transition-old(site-navbar) {
+    display: none;
+  }
+
+  ::view-transition-new(site-navbar) {
+    animation: none;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+.container-portfolio {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .container-portfolio {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-portfolio {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+/* Glassmorphism card */
+.glass-card {
+  background: color-mix(in srgb, var(--color-bg-card) 80%, transparent);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+}
+
+/* Lime accent gradient text */
+.text-gradient-lime {
+  background: linear-gradient(135deg,
+      var(--color-lime-accent) 0%,
+      var(--color-lime-accent-light) 50%,
+      var(--color-fg) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer text effect */
+.text-shimmer {
+  background: linear-gradient(90deg,
+      var(--color-fg) 0%,
+      var(--color-lime-accent) 50%,
+      var(--color-fg) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Lime accent underline */
+.underline-lime {
+  position: relative;
+}
+
+.underline-lime::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--color-lime-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s var(--ease-smooth);
+}
+
+.underline-lime:hover::after {
+  transform: scaleX(1);
+}
+
+/* ============================================================
+   FOCUS VISIBLE
+   ============================================================ */
+:focus-visible:not(input, textarea, select) {
+  outline: 2px solid var(--color-lime-accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
