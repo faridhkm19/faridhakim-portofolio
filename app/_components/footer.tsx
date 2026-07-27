@@ -90,7 +90,7 @@ export function Footer() {
             © {year} Farid Hakim. All rights reserved.
           </p>
           <p className="text-xs text-[var(--color-fg-subtle)]">
-            Designed and Developed in Jakarta, Indonesia
+            Developed and Designed in Jakarta, Indonesia
           </p>
         </div>
       </div>

@@ -195,8 +195,8 @@ function CountUp({
 // ============================================================
 function StatsRow() {
   const stats = [
-    { target: 15, suffix: "+", label: "Projects Completed" },
-    { target: 2, suffix: "+", label: "Years Experience" },
+    { target: 10, suffix: "+", label: "Projects Completed" },
+    { target: 1, suffix: "+", label: "Years Experience" },
     { target: 90, suffix: "%", label: "Client Satisfaction" },
   ];
 
@@ -235,7 +235,7 @@ function FeaturedProjects() {
         <Reveal className="mb-12 flex items-end justify-between">
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--color-lime-accent)]">
-              Selected Work
+              Selected Work 
             </p>
             <h2 className="font-heading text-3xl font-bold text-[var(--color-fg)] md:text-4xl">
               Featured Projects

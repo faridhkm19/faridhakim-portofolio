@@ -5,6 +5,7 @@ import { Providers } from "./_components/providers";
 import { Navbar } from "./_components/navbar";
 import { Footer } from "./_components/footer";
 import { CustomCursor } from "./_components/custom-cursor";
+import { Onboarding } from "./_components/onboarding";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -74,6 +75,7 @@ export default function RootLayout({
     >
       <body className="min-h-screen flex flex-col antialiased">
         <Providers>
+          <Onboarding />
           <CustomCursor />
           <Navbar />
           <main className="flex-1 pt-16">{children}</main>
