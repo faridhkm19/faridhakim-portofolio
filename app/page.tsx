@@ -133,7 +133,7 @@ function Hero() {
           className="relative z-0 mt-3 flex flex-col items-center gap-1.5 pb-14 text-center"
         >
           <span className="font-heading text-sm font-medium uppercase tracking-[0.22em] text-[var(--color-fg-muted)]">
-            Graphic Designer
+            WEB DEVELOPER & DESIGNER
           </span>
           <div className="flex flex-col items-center gap-2 mt-4 text-[var(--color-fg-subtle)]">
             <span className="text-[10px] uppercase tracking-widest font-heading">Scroll</span>
