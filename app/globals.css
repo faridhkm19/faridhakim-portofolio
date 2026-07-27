@@ -224,6 +224,127 @@ body {
   }
 }
 
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* ============================================================
+   DISCIPLINES MARQUEE — Crossed X Layout
+   ============================================================ */
+.disciplines-marquee-wrapper {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+  /* Fade edges */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 12%,
+    black 88%,
+    transparent 100%
+  );
+}
+
+.marquee-band {
+  position: absolute;
+  left: -10%;
+  width: 120%;
+  display: flex;
+  align-items: center;
+  padding: 0.875rem 0;
+}
+
+/* Back band — white, tilted top-left → bottom-right */
+.marquee-band-back {
+  top: 50%;
+  transform: translateY(-50%) rotate(-6deg);
+  background-color: #ffffff;
+  z-index: 1;
+}
+
+/* Front band — lime accent, tilted top-right → bottom-left (opposite diagonal) */
+.marquee-band-front {
+  top: 50%;
+  transform: translateY(-50%) rotate(6deg);
+  background-color: var(--color-lime-accent);
+  z-index: 2;
+}
+
+/* Subtle drop shadow on front band to feel layered */
+.marquee-band-front {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+}
+.marquee-band-back {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
+}
+
+.marquee-track {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.marquee-track-ltr {
+  animation: marquee-right 28s linear infinite;
+}
+
+.marquee-track-rtl {
+  animation: marquee-left 22s linear infinite;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.marquee-text-dark {
+  font-family: var(--font-heading);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #0a0a0a;
+  white-space: nowrap;
+}
+
+.marquee-sep {
+  font-size: 0.875rem;
+  color: #0a0a0a;
+  opacity: 0.45;
+  flex-shrink: 0;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track-ltr,
+  .marquee-track-rtl {
+    animation-play-state: paused;
+  }
+}
+
 /* ============================================================
    VIEW TRANSITIONS
    ============================================================ */

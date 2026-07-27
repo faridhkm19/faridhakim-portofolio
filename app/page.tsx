@@ -318,34 +318,63 @@ function FeaturedProjects() {
 // ============================================================
 // Services / Disciplines Marquee
 // ============================================================
-const disciplines = [
-  "UI/UX Design",
-  "Typography",
+const disciplinesBack = [
   "Logo Design",
-  "Visual Strategy",
+  "UI/UX Design",
   "Brand Identity",
 ];
 
+const disciplinesFront = [
+  "Web Development",
+  "Database Management",
+  "Front-End Development",
+  "Mobile App Development",
+];
+
+// Repeat items enough times to guarantee seamless loop at any viewport width
+const REPEAT = 6;
+
 function DisciplinesMarquee() {
+  const backItems = Array.from({ length: REPEAT }, () => disciplinesBack).flat();
+  const frontItems = Array.from({ length: REPEAT }, () => disciplinesFront).flat();
+
   return (
-    <section className="overflow-hidden border-y border-[var(--color-border)] py-5">
-      <motion.div
-        animate={{ x: ["0%", "-50%"] }}
-        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="flex whitespace-nowrap"
-      >
-        {[...disciplines, ...disciplines].map((d, i) => (
-          <div key={i} className="flex items-center gap-8 pr-8">
-            <span className="font-heading text-sm font-medium uppercase tracking-widest text-[var(--color-fg-subtle)]">
-              {d}
-            </span>
-            <span className="text-[var(--color-lime-accent)]">✦</span>
+    <section
+      aria-label="Services and disciplines"
+      className="py-2"
+      style={{ overflow: "hidden" }}
+    >
+      <div className="disciplines-marquee-wrapper">
+
+        {/* ── Lapisan BELAKANG — putih, diagonal kiri (-6deg), gerak → */}
+        <div className="marquee-band marquee-band-back">
+          <div className="marquee-track marquee-track-ltr">
+            {backItems.map((label, i) => (
+              <div key={i} className="marquee-item">
+                <span className="marquee-text-dark">{label}</span>
+                <span className="marquee-sep" aria-hidden="true">✦</span>
+              </div>
+            ))}
           </div>
-        ))}
-      </motion.div>
+        </div>
+
+        {/* ── Lapisan DEPAN — lime-accent, diagonal kanan (+6deg), gerak ← */}
+        <div className="marquee-band marquee-band-front">
+          <div className="marquee-track marquee-track-rtl">
+            {frontItems.map((label, i) => (
+              <div key={i} className="marquee-item">
+                <span className="marquee-text-dark">{label}</span>
+                <span className="marquee-sep" aria-hidden="true">✦</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+      </div>
     </section>
   );
 }
+
 
 // ============================================================
 // CTA Section
