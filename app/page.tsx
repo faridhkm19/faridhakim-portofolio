@@ -234,10 +234,7 @@ function FeaturedProjects() {
         {/* Section header */}
         <Reveal className="mb-12 flex items-end justify-between">
           <div>
-            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--color-lime-accent)]">
-              Selected Work 
-            </p>
-            <h2 className="font-heading text-3xl font-bold text-[var(--color-fg)] md:text-4xl">
+            <h2 className="font-heading text-4xl font-bold text-[var(--color-fg)] md:text-5xl">
               Featured Projects
             </h2>
           </div>
@@ -251,16 +248,15 @@ function FeaturedProjects() {
         </Reveal>
 
         {/* Projects grid */}
-        <StaggerContainer className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <StaggerContainer className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {featuredProjects.map((project) => (
             <StaggerItem key={project.slug}>
               <Link
                 href={`/projects/${project.slug}`}
                 id={`home-project-${project.slug}`}
-                className="group block"
+                className="group block overflow-hidden rounded-lg border-[3px] border-[var(--color-border)] transition-colors duration-300 hover:border-[var(--color-lime-accent)]"
               >
-                <ViewTransition name={`project-image-${project.slug}`}>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-[var(--color-bg-secondary)]">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-t-[5px] bg-[var(--color-bg-secondary)]">
                     <Image
                       src={project.coverImage}
                       alt={project.title}
@@ -275,27 +271,20 @@ function FeaturedProjects() {
                       </span>
                     </div>
                   </div>
-                </ViewTransition>
 
-                <div className="mt-4 space-y-1">
-                  <div className="flex items-center gap-2">
-                    <span
-                      className="h-1.5 w-1.5 rounded-full"
-                      style={{ backgroundColor: "var(--color-lime-accent)" }}
-                    />
-                    <span className="text-xs text-[var(--color-fg-subtle)]">
-                      {project.category}
-                    </span>
-                    <span className="text-xs text-[var(--color-fg-subtle)]">
-                      · {project.year}
+                {/* Meta area — gray bg default, lime accent on hover */}
+                <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-lime-accent)]">
+                  <div className="min-w-0">
+                    <h3 className="font-heading text-sm font-bold leading-snug text-white transition-colors duration-300 group-hover:text-[var(--color-ink-950)] truncate">
+                      {project.title}
+                    </h3>
+                    <span className="text-[11px] text-white/60 transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
+                      {Array.isArray(project.category) ? project.category[0] : project.category}
                     </span>
                   </div>
-                  <h3 className="font-heading text-lg font-semibold text-[var(--color-fg)] group-hover:text-[var(--color-lime-accent)] transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-[var(--color-fg-muted)] line-clamp-2">
-                    {project.description}
-                  </p>
+                  <span className="flex-shrink-0 text-[11px] text-white/60 transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
+                    {project.year}
+                  </span>
                 </div>
               </Link>
             </StaggerItem>
@@ -381,10 +370,10 @@ function DisciplinesMarquee() {
 // ============================================================
 function CTASection() {
   return (
-    <section className="pt-12 pb-24 md:pt-24">
+    <section className="pt-12 pb-24">
       <div className="container-portfolio">
         <Reveal>
-          <div className="relative overflow-hidden rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-10 md:p-16 text-center">
+          <div className="relative overflow-hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-10 md:p-16 text-center">
             {/* Background decoration */}
             <div
               className="pointer-events-none absolute inset-0 -z-0"

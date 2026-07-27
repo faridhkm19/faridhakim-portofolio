@@ -44,20 +44,13 @@ export default function AboutPage() {
           {/* Left: Text */}
           <div>
             <Reveal>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--color-lime-accent)]">
-                About Me
-              </p>
-              <h1 className="font-heading text-4xl font-bold text-[var(--color-fg)] md:text-5xl">
-                Hi, I&rsquo;m{" "}
-                <span className="text-[var(--color-lime-accent)]">Farid</span>
+              <h1 className="font-heading text-5xl font-bold text-[var(--color-fg)] md:text-6xl">
+                Hi, I&rsquo;m Farid
               </h1>
             </Reveal>
             <Reveal delay={0.1} className="mt-6 space-y-4">
               <p className="text-[var(--color-fg-muted)] leading-relaxed">
                 {personalInfo.bio}
-              </p>
-              <p className="text-[var(--color-fg-muted)] leading-relaxed">
-                My goal is to create work that not only looks good but also delivers lasting value for the people who use it.
               </p>
             </Reveal>
 

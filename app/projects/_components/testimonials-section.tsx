@@ -25,28 +25,25 @@ export function TestimonialsSection() {
   return (
     <div id="testimonials" className="mt-24 pt-12 border-t border-[var(--color-border)]">
       {/* Section header */}
-      <Reveal className="mb-16 text-center max-w-2xl mx-auto">
+      <Reveal className="mb-12 text-center max-w-2xl mx-auto">
         <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--color-lime-accent)]">
           Testimonials
         </p>
         <h2 className="font-heading text-3xl font-bold text-[var(--color-fg)] md:text-4xl">
           What People Say
         </h2>
-        <p className="mt-4 text-[var(--color-fg-muted)]">
-          Feedback from clients and collaborators on the projects we've worked on together.
-        </p>
       </Reveal>
 
       {/* Testimonials grid */}
       <StaggerContainer
-        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
         staggerDelay={0.12}
       >
         {testimonials.map((t, i) => (
           <StaggerItem key={t.id} className="flex h-full">
             <article
               id={`testimonial-${t.id}`}
-              className="relative flex flex-col gap-4 rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 w-full h-full transition-all duration-300 hover:border-[var(--color-lime-accent)]/30 hover:shadow-[0_4px_24px_rgba(0,0,0,0.08)]"
+              className="relative flex flex-col gap-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 w-full h-full transition-all duration-300 hover:border-[var(--color-lime-accent)]/30 hover:shadow-[0_4px_24px_rgba(0,0,0,0.08)]"
             >
               {/* Quote icon */}
               <QuoteIcon />
@@ -82,25 +79,8 @@ export function TestimonialsSection() {
           </StaggerItem>
         ))}
       </StaggerContainer>
-
-      {/* CTA to contact */}
-      <Reveal className="mt-20 text-center">
-        <div className="inline-block rounded-2xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-8 py-8 max-w-md mx-auto">
-          <p className="font-heading text-lg font-semibold text-[var(--color-fg)] mb-2">
-            Want to work together?
-          </p>
-          <p className="text-sm text-[var(--color-fg-muted)] mb-5">
-            I'd love to hear about your project.
-          </p>
-          <a
-            href="/contact"
-            id="testimonials-cta"
-            className="inline-block rounded-full bg-[var(--color-lime-accent)] px-6 py-2.5 font-heading text-sm font-semibold text-white dark:text-[var(--color-ink-950)] transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-lime-accent)_40%,transparent)] hover:bg-[var(--color-lime-accent-dark)]"
-          >
-            Get in touch →
-          </a>
-        </div>
-      </Reveal>
     </div>
+
+
   );
 }

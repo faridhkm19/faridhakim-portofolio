@@ -50,76 +50,38 @@ function ProjectCard({
         href={`/projects/${project.slug}`}
         id={`project-card-${project.slug}`}
         data-cursor="view"
-        className="group block"
+        className="group block overflow-hidden rounded-lg border-[3px] border-[var(--color-border)] transition-colors duration-300 hover:border-[var(--color-lime-accent)]"
       >
         {/* Thumbnail */}
-        <ViewTransition name={`project-image-${project.slug}`}>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-[var(--color-bg-secondary)]">
-            <Image
-              src={project.coverImage}
-              alt={project.title}
-              fill
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-            {/* Hover overlay */}
-            <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/0 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-              <span className="font-heading text-xs font-medium uppercase tracking-widest text-white">
-                View Project →
-              </span>
-            </div>
-            {/* Category chip on card */}
-            <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-              {(Array.isArray(project.category) ? project.category : [project.category]).map((cat) => (
-                <span
-                  key={cat}
-                  className="rounded-full px-2.5 py-1 text-xs font-semibold"
-                  style={{
-                    backgroundColor: "color-mix(in srgb, var(--color-lime-accent) 15%, transparent)",
-                    color: "var(--color-lime-accent)",
-                    border: "1px solid color-mix(in srgb, var(--color-lime-accent) 30%, transparent)",
-                  }}
-                >
-                  {cat}
-                </span>
-              ))}
-            </div>
-          </div>
-        </ViewTransition>
-
-        {/* Meta */}
-        <div className="mt-4 space-y-1">
-          <div className="flex items-center gap-2">
-            <span
-              className="h-1.5 w-1.5 flex-shrink-0 rounded-full"
-              style={{ backgroundColor: "var(--color-lime-accent)" }}
-            />
-            <span className="text-xs text-[var(--color-fg-subtle)]">
-              {project.year}
+        <div className="relative aspect-[4/3] overflow-hidden rounded-t-[5px] bg-[var(--color-bg-secondary)]">
+          <Image
+            src={project.coverImage}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+          {/* Hover overlay with arrow button */}
+          <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-black/0 to-transparent p-5 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <span className="font-heading text-xs font-medium uppercase tracking-widest text-white">
+              View Project →
             </span>
           </div>
+        </div>
 
-          {/* Title */}
-          <h2 className="font-heading text-lg font-semibold text-[var(--color-fg)] transition-colors duration-200 group-hover:text-[var(--color-lime-accent)]">
-            {project.title}
-          </h2>
-
-          {/* Description */}
-          <p className="line-clamp-2 text-sm text-[var(--color-fg-muted)]">
-            {project.description}
-          </p>
-
-          {/* Tool chips */}
-          <div className="flex flex-wrap gap-1.5 pt-1">
-            {project.tools.slice(0, 3).map((tool) => (
-              <span
-                key={tool}
-                className="rounded-full border border-[var(--color-border)] px-2.5 py-0.5 text-xs text-[var(--color-fg-subtle)]"
-              >
-                {tool}
-              </span>
-            ))}
+        {/* Meta area — gray bg default, lime accent on hover */}
+        <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-lime-accent)]">
+          <div className="min-w-0">
+            <h2 className="font-heading text-sm font-bold leading-snug text-white transition-colors duration-300 group-hover:text-[var(--color-ink-950)] truncate">
+              {project.title}
+            </h2>
+            <span className="text-[11px] text-white/60 transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
+              {Array.isArray(project.category) ? project.category[0] : project.category}
+            </span>
           </div>
+          <span className="flex-shrink-0 text-[11px] text-white/60 transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
+            {project.year}
+          </span>
         </div>
       </Link>
     </motion.div>
@@ -146,15 +108,9 @@ export default function ProjectsPage() {
       <div className="container-portfolio">
         {/* Page header */}
         <Reveal className="mb-12">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--color-lime-accent)]">
-            Portfolio
-          </p>
-          <h1 className="font-heading text-4xl font-bold text-[var(--color-fg)] md:text-5xl">
+          <h1 className="font-heading text-5xl font-bold text-[var(--color-fg)] md:text-6xl">
             All Projects
           </h1>
-          <p className="mt-4 max-w-lg text-[var(--color-fg-muted)]">
-            A collection of graphic design and web development projects
-          </p>
         </Reveal>
 
         {/* Filter tabs */}
@@ -190,7 +146,7 @@ export default function ProjectsPage() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
+            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
           >
             {filtered.map((project, i) => (
               <ProjectCard key={project.slug} project={project} index={i}/>
