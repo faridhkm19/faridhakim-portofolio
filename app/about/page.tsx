@@ -4,36 +4,13 @@ import Link from "next/link";
 import { personalInfo, timeline } from "@/app/_lib/data";
 import { Reveal, StaggerContainer, StaggerItem } from "@/app/_components/scroll-animation";
 import { SkillsetSection } from "./_components/skillset-section";
-import { Target, Layers, Crosshair, TrendingUp } from "lucide-react";
+import { ValuesSection } from "./_components/values-section";
 
 export const metadata: Metadata = {
   title: "About",
   description:
     "Learn about Farid Hakim — a Jakarta-based graphic designer with experience in brand identity, UI/UX, and editorial design.",
 };
-
-const values = [
-  {
-    icon: <Target />,
-    title: "Purpose",
-    desc: "Every design starts with a purpose. It should solve problems, communicate clearly, and create lasting value.",
-  },
-  {
-    icon: <Layers />,
-    title: "Process",
-    desc: "Good work begins with understanding the problem. Research, strategy, and planning always come before design.",
-  },
-  {
-    icon: <Crosshair />,
-    title: "Detail",
-    desc: "Small details make a big difference. I value consistency in every element, from typography and spacing to the final experience.",
-  },
-  {
-    icon: <TrendingUp />,
-    title: "Growth",
-    desc: "Learning is part of my process. I continuously improve my creative and technical skills to build better digital experiences.",
-  },
-];
 
 export default function AboutPage() {
   return (
@@ -104,7 +81,7 @@ export default function AboutPage() {
                 />
               </div>
               {/* Location badge */}
-              <div className="absolute -left-4 -top-4 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-2 shadow-lg">
+              <div className="absolute -left-4 -top-4 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-2 shadow-lg">
                 <p className="text-xs text-[var(--color-fg-subtle)]">Based in</p>
                 <p className="font-heading text-sm font-semibold text-[var(--color-fg)]">
                   {personalInfo.location}
@@ -118,21 +95,19 @@ export default function AboutPage() {
         <SkillsetSection />
 
         {/* Timeline */}
-        <Reveal className="mb-10">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--color-lime-accent)]">
-            WORK HISTORY
-          </p>
-          <h2 className="font-heading text-3xl font-bold text-[var(--color-fg)]">
-            Experience
-          </h2>
-        </Reveal>
+        <div className="mb-20">
+          <Reveal className="mb-16">
+            <h2 className="font-heading text-3xl font-bold text-[var(--color-fg)] md:text-4xl">
+              Experience
+            </h2>
+          </Reveal>
 
         <StaggerContainer className="space-y-3" staggerDelay={0.1}>
           {timeline
             .filter((t) => t.type === "experience")
             .map((item) => (
               <StaggerItem key={item.title}>
-                <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
+                <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
                   <div className="flex items-start justify-between gap-3 mb-2">
                     <div>
                       <h4 className="font-heading text-base font-semibold text-[var(--color-fg)]">
@@ -152,40 +127,11 @@ export default function AboutPage() {
                 </div>
               </StaggerItem>
             ))}
-        </StaggerContainer>
-
-        {/* Values */}
-        <div className="mt-24 pt-12 border-t border-[var(--color-border)]">
-          <Reveal className="mb-4">
-            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-[var(--color-lime-accent)]">
-              What I Believe In
-            </p>
-            <h2 className="font-heading text-3xl font-bold text-[var(--color-fg)]">
-              My Design Values
-            </h2>
-          </Reveal>
-
-          <StaggerContainer
-            className="mb-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
-            staggerDelay={0.1}
-          >
-            {values.map((v) => (
-              <StaggerItem key={v.title}>
-                <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 h-full hover:border-[var(--color-lime-accent)]/30 transition-colors">
-                  <span className="mb-3 block text-xl text-[var(--color-lime-accent)]">
-                    {v.icon}
-                  </span>
-                  <h3 className="font-heading text-base font-semibold text-[var(--color-fg)] mb-2">
-                    {v.title}
-                  </h3>
-                  <p className="text-sm text-[var(--color-fg-muted)] leading-relaxed">
-                    {v.desc}
-                  </p>
-                </div>
-              </StaggerItem>
-            ))}
           </StaggerContainer>
         </div>
+
+        {/* Values */}
+        <ValuesSection />
       </div>
     </div>
   );

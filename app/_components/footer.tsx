@@ -1,19 +1,26 @@
 import Link from "next/link";
 import { personalInfo } from "@/app/_lib/data";
 import { Logo } from "./logo";
+import { isContactPageEnabled } from "@/app/_lib/config";
 
 const socialLinks = [
-  { href: personalInfo.socials.behance, label: "Behance", id: "footer-behance" },
+  { href: personalInfo.socials.github, label: "Github", id: "footer-github" },
   { href: personalInfo.socials.linkedin, label: "LinkedIn", id: "footer-linkedin" },
   { href: personalInfo.socials.instagram, label: "Instagram", id: "footer-instagram" },
 ];
 
-const navLinks = [
+const allNavLinks = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/about", label: "About" },
+  // Contact link is conditionally included via the feature flag in config.ts
   { href: "/contact", label: "Contact" },
 ];
+
+// Filter out Contact link when the feature flag is disabled
+const navLinks = allNavLinks.filter(
+  (link) => link.href !== "/contact" || isContactPageEnabled
+);
 
 export function Footer() {
   const year = new Date().getFullYear();

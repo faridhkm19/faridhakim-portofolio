@@ -1,14 +1,15 @@
 "use client";
 
-import type { Metadata } from "next";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { personalInfo } from "@/app/_lib/data";
 import { Reveal } from "@/app/_components/scroll-animation";
+import { isContactPageEnabled } from "@/app/_lib/config";
 
 const socialLinks = [
-  { name: "Behance", href: personalInfo.socials.behance, icon: "Be" },
-  { name: "Dribbble", href: personalInfo.socials.dribbble, icon: "Dr" },
+  { name: "Github", href: personalInfo.socials.github, icon: "Gh" },
   { name: "LinkedIn", href: personalInfo.socials.linkedin, icon: "In" },
   { name: "Instagram", href: personalInfo.socials.instagram, icon: "Ig" },
 ];
@@ -16,6 +17,18 @@ const socialLinks = [
 type FormState = "idle" | "submitting" | "success" | "error";
 
 export default function ContactPage() {
+  const router = useRouter();
+
+  // Feature flag guard — redirect to home if contact page is disabled
+  useEffect(() => {
+    if (!isContactPageEnabled) {
+      router.replace("/");
+    }
+  }, [router]);
+
+  // If disabled, render nothing while redirect is in progress
+  if (!isContactPageEnabled) return null;
+
   const [formState, setFormState] = useState<FormState>("idle");
   const [form, setForm] = useState({
     name: "",
@@ -61,7 +74,7 @@ export default function ContactPage() {
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5 lg:items-center">
           {/* Contact info sidebar */}
           <Reveal direction="right" className="lg:col-span-2">
-            <div className="rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
+            <div className="rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5">
               {/* Email */}
               <div className="pb-5">
                 <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-fg-subtle)] mb-2">

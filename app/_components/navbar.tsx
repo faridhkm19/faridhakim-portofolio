@@ -6,13 +6,20 @@ import { useTheme } from "next-themes";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Logo } from "./logo";
+import { isContactPageEnabled } from "@/app/_lib/config";
 
-const navLinks = [
+const allNavLinks = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
   { href: "/about", label: "About" },
+  // Contact link is conditionally included via the feature flag in config.ts
   { href: "/contact", label: "Contact" },
 ];
+
+// Filter out Contact link when the feature flag is disabled
+const navLinks = allNavLinks.filter(
+  (link) => link.href !== "/contact" || isContactPageEnabled
+);
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme();
@@ -71,11 +78,10 @@ export function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${scrolled
           ? "border-[var(--color-border)] bg-[color-mix(in_srgb,var(--color-bg)_85%,transparent)] backdrop-blur-md"
           : "border-transparent bg-transparent"
-      }`}
+        }`}
     >
       <div className="container-portfolio flex h-16 items-center justify-between">
         {/* Logo */}
@@ -93,17 +99,16 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 id={`nav-${link.label.toLowerCase()}`}
-                className={`relative rounded-md px-3 py-1.5 text-sm font-medium transition-colors duration-200 ${
-                  isActive
+                className={`relative rounded-lg px-3 py-1.5 text-sm font-medium transition-colors duration-200 ${isActive
                     ? "text-[var(--color-lime-accent)]"
                     : "text-[var(--color-fg-muted)] hover:text-[var(--color-fg)]"
-                }`}
+                  }`}
               >
                 {link.label}
                 {isActive && (
                   <motion.span
                     layoutId="nav-active-indicator"
-                    className="absolute inset-0 rounded-md bg-[var(--color-lime-accent)]/10"
+                    className="absolute inset-0 rounded-lg bg-[var(--color-lime-accent)]/10"
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
@@ -122,7 +127,7 @@ export function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle mobile menu"
             aria-expanded={mobileOpen}
-            className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-md border border-[var(--color-border)] bg-[var(--color-bg-card)] md:hidden"
+            className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] md:hidden"
           >
             <motion.span
               animate={mobileOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
@@ -162,11 +167,10 @@ export function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`rounded-md px-3 py-2.5 text-sm font-medium transition-colors ${
-                  isActive
+                className={`rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${isActive
                     ? "bg-[var(--color-lime-accent)]/10 text-[var(--color-lime-accent)]"
                     : "text-[var(--color-fg-muted)] hover:bg-[var(--color-bg-secondary)] hover:text-[var(--color-fg)]"
-                }`}
+                  }`}
               >
                 {link.label}
               </Link>

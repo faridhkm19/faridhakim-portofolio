@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { ViewTransition } from "react";
 import { featuredProjects, personalInfo } from "@/app/_lib/data";
 import { Reveal, StaggerContainer, StaggerItem } from "@/app/_components/scroll-animation";
+import { isContactPageEnabled } from "@/app/_lib/config";
 
 // ============================================================
 // Hero Section
@@ -256,21 +257,21 @@ function FeaturedProjects() {
                 id={`home-project-${project.slug}`}
                 className="group block overflow-hidden rounded-lg border-[3px] border-[var(--color-border)] transition-colors duration-300 hover:border-[var(--color-lime-accent)]"
               >
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-t-[5px] bg-[var(--color-bg-secondary)]">
-                    <Image
-                      src={project.coverImage}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-                    {/* Overlay on hover */}
-                    <div className="absolute inset-0 bg-[var(--color-ink-950)]/0 transition-all duration-300 group-hover:bg-[var(--color-ink-950)]/50 flex items-center justify-center">
-                      <span className="translate-y-4 rounded-full bg-[var(--color-lime-accent)] px-5 py-2 font-heading text-sm font-semibold text-[var(--color-ink-950)] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
-                        View Project →
-                      </span>
-                    </div>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-t-[5px] bg-[var(--color-bg-secondary)]">
+                  <Image
+                    src={project.coverImage}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  {/* Overlay on hover */}
+                  <div className="absolute inset-0 bg-[var(--color-ink-950)]/0 transition-all duration-300 group-hover:bg-[var(--color-ink-950)]/50 flex items-center justify-center">
+                    <span className="translate-y-4 rounded-full bg-[var(--color-lime-accent)] px-5 py-2 font-heading text-sm font-semibold text-[var(--color-ink-950)] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                      View Project →
+                    </span>
                   </div>
+                </div>
 
                 {/* Meta area — gray bg default, lime accent on hover */}
                 <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-lime-accent)]">
@@ -385,7 +386,7 @@ function CTASection() {
             <p className="relative mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-lime-accent)]">
               Let&rsquo;s Work Together
             </p>
-            <h2 className="relative font-heading text-3xl font-bold text-[var(--color-fg)] md:text-4xl">
+            <h2 className="font-heading text-3xl font-bold text-[var(--color-fg)] md:text-4xl">
               Have a project in mind?
             </h2>
             <p className="relative mt-4 mx-auto max-w-md text-[var(--color-fg-muted)]">
@@ -393,13 +394,16 @@ function CTASection() {
               Let&rsquo;s create something meaningful together.
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/contact"
-                id="home-cta-contact"
-                className="rounded-full bg-[var(--color-lime-accent)] px-8 py-3 font-heading text-sm font-semibold text-[var(--color-ink-950)] transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-lime-accent)_35%,transparent)] hover:bg-[var(--color-lime-accent-dark)]"
-              >
-                Get In Touch
-              </Link>
+              {/* Get In Touch button — hidden when isContactPageEnabled is false (see config.ts) */}
+              {isContactPageEnabled && (
+                <Link
+                  href="/contact"
+                  id="home-cta-contact"
+                  className="rounded-full bg-[var(--color-lime-accent)] px-8 py-3 font-heading text-sm font-semibold text-[var(--color-ink-950)] transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-lime-accent)_35%,transparent)] hover:bg-[var(--color-lime-accent-dark)]"
+                >
+                  Get In Touch
+                </Link>
+              )}
               <a
                 href={`mailto:${personalInfo.email}`}
                 id="home-cta-email"

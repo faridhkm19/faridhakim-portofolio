@@ -294,28 +294,36 @@ export const creativeProcess = [
 // ============================================================
 export const timeline: TimelineItem[] = [
   {
-    year: "2023–Present",
-    title: "Freelance Graphic Designer",
-    place: "Self-employed",
+    year: "2026 – Present",
+    title: "Resika App",
+    place: "Team Training Project",
     description:
-      "Working with startups and agencies across brand identity, UI design, and print. Built a portfolio of 15+ projects across diverse industries.",
+      "Built a Flutter-based waste management app with reusable UI components, end-to-end user flows, and location-based services for a seamless experience.",
     type: "experience",
   },
   {
-    year: "2022–2023",
-    title: "Junior Visual Designer",
-    place: "Kreasi Studio, Jakarta",
+    year: "2026",
+    title: "Coding Camp 2026 2.0 Powered by DBS Foundation",
+    place: "Dicoding & DBS Foundation",
     description:
-      "Collaborated in a fast-paced design agency on brand identity and digital campaigns for FMCG clients. Contributed to projects reaching 2M+ impressions.",
+      "Built responsive websites and React-based applications while applying JavaScript, CRUD operations, Web Storage API, and component-based development.",
     type: "experience",
   },
 
   {
-    year: "2021",
-    title: "Design Intern",
-    place: "Tokopedia, Jakarta",
+    year: "2026",
+    title: "CompeteMate Bootcamp 2026 UI/UX Design",
+    place: "GDGoC Universitas Gunadarma",
     description:
-      "3-month internship in the Growth Design team. Contributed to UI improvements for the seller dashboard, reaching 6M+ active sellers.",
+      "Designed a user-centered digital product through wireframing, prototyping, and UI design while collaborating with a team, earning the 1st Best Team award.",
+    type: "experience",
+  },
+  {
+    year: "2026",
+    title: "HelloCation ID",
+    place: "Volunteer Batch 10",
+    description:
+      "Led the graphic design team in producing 50+ digital assets while coordinating content production and cross-functional collaboration for social media.",
     type: "experience",
   },
 ];
@@ -332,9 +340,8 @@ export const personalInfo = {
   email: "faridhkm19@gmail.com",
   availableForWork: true,
   socials: {
-    behance: "https://behance.net/faridhakim",
-    dribbble: "https://dribbble.com/faridhakim",
-    linkedin: "https://linkedin.com/in/faridhakim",
-    instagram: "https://instagram.com/faridhakim.design",
+    github: "",
+    linkedin: "https://linkedin.com/in/faridhakim19",
+    instagram: "https://instagram.com/faridhkimm",
   },
 };

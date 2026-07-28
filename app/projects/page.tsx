@@ -12,11 +12,12 @@ import { TestimonialsSection } from "./_components/testimonials-section";
 
 const categories = [
   "All",
-  "Brand Identity",
+  "Web Development",
+  "Front-End Development",
   "UI/UX Design",
-  "Print Design",
-  "Logo Design",
+  "Brand Identity",
   "Marketing Design",
+  "Logo Design",
 ] as const;
 
 type Category = (typeof categories)[number];
@@ -98,10 +99,10 @@ export default function ProjectsPage() {
     activeCategory === "All"
       ? projects
       : projects.filter((p) =>
-          Array.isArray(p.category)
-            ? p.category.includes(activeCategory)
-            : p.category === activeCategory
-        );
+        Array.isArray(p.category)
+          ? p.category.includes(activeCategory)
+          : p.category === activeCategory
+      );
 
   return (
     <div className="pt-8 pb-16 md:pt-12 md:pb-24">
@@ -125,11 +126,10 @@ export default function ProjectsPage() {
                 key={cat}
                 id={`filter-${cat.toLowerCase().replace(/\//g, "-").replace(/ /g, "-")}`}
                 onClick={() => setActiveCategory(cat)}
-                className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 ${
-                  activeCategory === cat
+                className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 ${activeCategory === cat
                     ? "border border-transparent bg-[var(--color-lime-accent)] text-[var(--color-ink-950)]"
                     : "border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:border-[var(--color-lime-accent)]/50 hover:text-[var(--color-lime-accent)]"
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -149,7 +149,7 @@ export default function ProjectsPage() {
             className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
           >
             {filtered.map((project, i) => (
-              <ProjectCard key={project.slug} project={project} index={i}/>
+              <ProjectCard key={project.slug} project={project} index={i} />
             ))}
           </motion.div>
         </AnimatePresence>

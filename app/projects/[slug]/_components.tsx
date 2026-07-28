@@ -77,7 +77,7 @@ export function GalleryGrid({
         {images.map((src, i) => (
           <motion.div
             key={i}
-            className="relative overflow-hidden rounded-xl bg-[var(--color-bg-secondary)]"
+            className="relative overflow-hidden rounded-lg bg-[var(--color-bg-secondary)]"
             style={{
               aspectRatio: isSquareGrid ? "1 / 1" : (i === 0 ? "16 / 9" : "4 / 3"),
             }}

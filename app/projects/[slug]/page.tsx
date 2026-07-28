@@ -96,7 +96,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
           {/* ── Sidebar ── */}
           <aside className="lg:col-span-1">
-            <div className="sticky top-24 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 space-y-6">
+            <div className="sticky top-24 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-6 space-y-6">
               {/* Accent line */}
               <div
                 className="h-1 w-12 rounded-full"
@@ -160,7 +160,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <Link
                   href={`/projects/${prev.slug}`}
                   id={`prev-project-${prev.slug}`}
-                  className="group flex flex-col gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 transition-all hover:border-[var(--color-lime-accent)]/40"
+                  className="group flex flex-col gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 transition-all hover:border-[var(--color-lime-accent)]/40"
                 >
                   <span className="text-xs text-[var(--color-fg-subtle)]">
                     ← Previous
@@ -174,7 +174,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <Link
                   href={`/projects/${next.slug}`}
                   id={`next-project-${next.slug}`}
-                  className="group flex flex-col gap-2 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 text-right transition-all hover:border-[var(--color-lime-accent)]/40 sm:ml-auto"
+                  className="group flex flex-col gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 text-right transition-all hover:border-[var(--color-lime-accent)]/40 sm:ml-auto"
                 >
                   <span className="text-xs text-[var(--color-fg-subtle)]">
                     Next →
