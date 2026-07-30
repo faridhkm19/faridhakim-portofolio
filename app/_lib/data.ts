@@ -333,7 +333,7 @@ export const timeline: TimelineItem[] = [
 // ============================================================
 export const personalInfo = {
   name: "Farid Hakim",
-  role: "Graphic Designer",
+  role: "Web Developer & Graphic Designer",
   tagline: "Crafting visual identities that speak louder than words.",
   bio: "I'm an Information Systems student passionate about developing web and mobile applications that combine functionality with a seamless user experience. I enjoy exploring new technologies, solving problems, and turning ideas into digital solutions through a structured development process. My experience has allowed me to strengthen both my technical and collaborative skills while working on individual and team-based projects. With a background in graphic design, I also bring an eye for clarity and consistency when creating user interfaces",
   location: "Jakarta, Indonesia",

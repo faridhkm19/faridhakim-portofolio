@@ -21,7 +21,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Farid Hakim — Graphic Designer",
+    default: "Farid Hakim — Web Developer & Graphic Designer",
     template: "%s | Farid Hakim",
   },
   description:
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://faridhakim.design",
     siteName: "Farid Hakim Portfolio",
-    title: "Farid Hakim — Graphic Designer",
+    title: "Farid Hakim — Web Developer & Graphic Designer",
     description:
       "Jakarta-based graphic designer specializing in brand identity, UI/UX, and editorial design.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Farid Hakim — Graphic Designer",
+    title: "Farid Hakim — Web Developer & Graphic Designer",
     description:
       "Jakarta-based graphic designer specializing in brand identity, UI/UX, and editorial design.",
   },

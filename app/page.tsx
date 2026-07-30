@@ -47,7 +47,7 @@ function Hero() {
           >
             <Image
               src="/projects/gambarproject/FotoFaridHakim.webp"
-              alt="Farid Hakim — Graphic Designer"
+              alt="Farid Hakim — Web Developer & Graphic Designer"
               fill
               priority
               className="object-cover object-top"
