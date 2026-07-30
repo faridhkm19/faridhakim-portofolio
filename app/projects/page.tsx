@@ -73,14 +73,14 @@ function ProjectCard({
         {/* Meta area — gray bg default, lime accent on hover */}
         <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-lime-accent)]">
           <div className="min-w-0">
-            <h2 className="font-heading text-sm font-bold leading-snug text-white transition-colors duration-300 group-hover:text-[var(--color-ink-950)] truncate">
+            <h2 className="font-heading text-sm font-bold leading-snug text-[var(--color-fg)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)] truncate">
               {project.title}
             </h2>
-            <span className="text-[11px] text-white/60 transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
+            <span className="text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
               {Array.isArray(project.category) ? project.category[0] : project.category}
             </span>
           </div>
-          <span className="flex-shrink-0 text-[11px] text-white/60 transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
+          <span className="flex-shrink-0 text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
             {project.year}
           </span>
         </div>
