@@ -8,7 +8,7 @@ import {
   getProjectBySlug,
   getAdjacentProjects,
 } from "@/app/_lib/data";
-import { GalleryGrid, LongDescription } from "./_components";
+import { GalleryGrid, LongDescription, ContentBlockRenderer } from "./_components";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -71,9 +71,6 @@ export default async function ProjectDetailPage({ params }: Props) {
             <h1 className="font-heading text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
               {project.title}
             </h1>
-            <p className="mt-3 max-w-xl text-sm text-white/60 md:text-base">
-              {project.description}
-            </p>
           </div>
         </div>
       </section>
@@ -85,12 +82,20 @@ export default async function ProjectDetailPage({ params }: Props) {
           {/* ── Main content col ── */}
           <div className="lg:col-span-2 space-y-10">
 
-            {/* Full description — renders \n\n as paragraph breaks */}
-            <LongDescription text={project.longDescription} />
+            {project.contentBlocks && project.contentBlocks.length > 0 ? (
+              /* contentBlocks path — used when project defines structured content */
+              <ContentBlockRenderer blocks={project.contentBlocks} title={project.title} />
+            ) : (
+              /* Default path — used for all other projects */
+              <>
+                {/* Full description — renders \n\n as paragraph breaks */}
+                <LongDescription text={project.longDescription} />
 
-            {/* Gallery */}
-            {project.images.length > 0 && (
-              <GalleryGrid images={project.images} title={project.title} layout={project.galleryLayout} />
+                {/* Gallery */}
+                {project.images.length > 0 && (
+                  <GalleryGrid images={project.images} title={project.title} layout={project.galleryLayout} />
+                )}
+              </>
             )}
           </div>
 
@@ -105,7 +110,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
               <div>
                 <p className="mb-1.5 text-xs font-semibold uppercase tracking-widest text-[var(--color-fg-subtle)]">
-                  Client
+                  {project.programLabel ?? "Client"}
                 </p>
                 <p className="font-medium text-[var(--color-fg)]">
                   {project.client}
@@ -130,21 +135,60 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </p>
               </div>
 
-              <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-fg-subtle)]">
-                  Tools Used
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tools.map((tool) => (
-                    <span
-                      key={tool}
-                      className="rounded-full border border-[var(--color-border)] px-3 py-1 text-xs text-[var(--color-fg-muted)]"
-                    >
-                      {tool}
-                    </span>
-                  ))}
+              {project.techStack ? (
+                <>
+                  {/* Backend */}
+                  <div>
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-fg-subtle)]">
+                      Backend
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.backend.map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-full border border-[var(--color-border)] px-3 py-1 text-xs text-[var(--color-fg-muted)]"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Frontend */}
+                  <div>
+                    <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-fg-subtle)]">
+                      Frontend
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.techStack.frontend.map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-full border border-[var(--color-border)] px-3 py-1 text-xs text-[var(--color-fg-muted)]"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </>
+              ) : (
+                /* Default: Tools Used */
+                <div>
+                  <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-fg-subtle)]">
+                    Tools Used
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tools.map((tool) => (
+                      <span
+                        key={tool}
+                        className="rounded-full border border-[var(--color-border)] px-3 py-1 text-xs text-[var(--color-fg-muted)]"
+                      >
+                        {tool}
+                      </span>
+                    ))}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </aside>
         </div>

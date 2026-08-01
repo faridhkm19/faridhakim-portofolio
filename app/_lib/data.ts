@@ -2,6 +2,10 @@
 // Static Data Layer — Farid Hakim Portfolio
 // ============================================================
 
+export type ContentBlock =
+  | { type: "text"; heading: string; body: string }
+  | { type: "gallery"; layout: "two-square" | "portrait-single" | "featured-plus-two"; images: string[] };
+
 export interface Project {
   slug: string;
   title: string;
@@ -16,6 +20,11 @@ export interface Project {
   featured: boolean;
   color: string; // accent color for the project card
   galleryLayout?: "square-grid";
+  contentBlocks?: ContentBlock[];
+  /** Overrides the "Client" label in the sidebar when provided. */
+  programLabel?: string;
+  /** When provided, replaces the Tools Used section with Backend/Frontend tech stacks. */
+  techStack?: { backend: string[]; frontend: string[] };
 }
 
 export interface Testimonial {
@@ -48,6 +57,77 @@ export interface TimelineItem {
 // PROJECTS
 // ============================================================
 export const projects: Project[] = [
+  {
+    slug: "tracker.io",
+    title: "Expense Tracker Web",
+    category: "Web Development",
+    year: "2026",
+    client: "Coding Camp 2026 2.0 Powered by DBS Foundation",
+    description:
+      "Designed the visual identity for SMB Fest Spectro 2024 by combining Indonesian cultural elements with storytelling to create a consistent and engaging event branding.",
+    longDescription:
+      "Tracker.io is a full-stack web application built to help people take control of their personal finances, tracking income and expenses in real time, organizing spending in a way that actually reflects their lifestyle, and turning raw numbers into visual patterns they can act on.",
+    tools: ["Adobe Illustrator", "Adobe Photoshop", "Canva"],
+    coverImage: "/projects/gambarproject/TRACKERIO/Thumbnailtracker.webp",
+    images: [
+      "/projects/gambarproject/SMBFest/gambar1.webp",
+      "/projects/gambarproject/SMBFest/gambar2.webp",
+      "/projects/gambarproject/SMBFest/gambar3.webp",
+      "/projects/gambarproject/SMBFest/gambar4.webp",
+      "/projects/gambarproject/SMBFest/gambar5.webp",
+      "/projects/gambarproject/SMBFest/gambar6.webp",
+      "/projects/gambarproject/SMBFest/gambar7.webp",
+    ],
+    featured: true,
+    color: "#0ea5e9", // Brand Identity (Sky-500)
+    galleryLayout: "square-grid",
+    programLabel: "Program",
+    techStack: {
+      backend: ["Node.js", "Express", "MySQL", "JWT", "bcrypt"],
+      frontend: ["Vanilla Javascript", "HTML5", "CSS3", "Chart JS"],
+    },
+    contentBlocks: [
+      {
+        type: "text",
+        heading: "About this project",
+        body: "Tracker.io is a full-stack web application built to help people take control of their personal finances, tracking income and expenses in real time, organizing spending in a way that actually reflects their lifestyle, and turning raw numbers into visual patterns they can act on.",
+      },
+      {
+        type: "gallery",
+        layout: "two-square",
+        images: [
+          "/projects/gambarproject/TRACKERIO/expansetrackerio1.webp",
+          "/projects/gambarproject/TRACKERIO/expansetrackeriobaru2.webp",
+        ],
+      },
+      {
+        type: "text",
+        heading: "The Problem",
+        body: "Managing personal finances is easy to plan but hard to sustain. Many people, students and young professionals especially, start out tracking their spending in a notebook or a spreadsheet, only to abandon it a few weeks in, or skip tracking altogether. Without a clear, ongoing record, it becomes difficult to see where money actually goes each month, let alone make informed decisions about saving or cutting back. Tracker.io was built to close that gap: a tool simple enough to use consistently, yet structured enough to turn scattered transactions into a clear picture of one's financial habits.",
+      },
+      {
+        type: "gallery",
+        layout: "portrait-single",
+        images: [
+          "/projects/gambarproject/TRACKERIO/expansetrackerio3.webp",
+        ],
+      },
+      {
+        type: "text",
+        heading: "Key Features",
+        body: "Tracker.io keeps every account private and secure through JWT-based authentication, ensuring one user's transactions and categories are never visible to another. Users can also define their own custom categories, rather than choosing from generic labels, so their records reflect how they actually spend. Finding a specific transaction is simple too, thanks to combined filters by date range, category, and keyword search. On top of that, an interactive dashboard visualizes the data through a category distribution chart and a monthly income-versus-expense trend, giving users a quick, at-a-glance read on their spending patterns over time.",
+      },
+      {
+        type: "gallery",
+        layout: "featured-plus-two",
+        images: [
+          "/projects/gambarproject/TRACKERIO/expansetrackeriobaru4.webp",
+          "/projects/gambarproject/TRACKERIO/expansetrackerio5.webp",
+          "/projects/gambarproject/TRACKERIO/expansetrackeriobaru6.webp",
+        ],
+      },
+    ],
+  },
   {
     slug: "smb-fest-spectro-2024",
     title: "SMB Fest Spectro 2024",
@@ -114,7 +194,7 @@ export const projects: Project[] = [
       "/projects/gambarproject/SASILHijab/SasilHijab4.webp",
       "/projects/gambarproject/SASILHijab/SasilHijab5.webp"
     ],
-    featured: true,
+    featured: false,
     color: "#0d9488", // Print Design (Teal-600)
     galleryLayout: "square-grid"
   },
