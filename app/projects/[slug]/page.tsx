@@ -71,6 +71,41 @@ export default async function ProjectDetailPage({ params }: Props) {
             <h1 className="font-heading text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
               {project.title}
             </h1>
+
+            {/* Live Demo & GitHub buttons — Web Development / Front-End Development only */}
+            {(() => {
+              const cats = Array.isArray(project.category) ? project.category : [project.category];
+              const isWebProject = cats.some(
+                (c) => c === "Web Development" || c === "Front-End Development"
+              );
+              if (!isWebProject) return null;
+              return (
+                <div className="mt-5 flex flex-wrap gap-3">
+                  {project.liveDemo && (
+                    <a
+                      href={project.liveDemo}
+                      id={`project-live-demo-${project.slug}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full bg-[var(--color-lime-accent)] px-6 py-2.5 font-heading text-sm font-semibold text-[var(--color-ink-950)] transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-lime-accent)_40%,transparent)] hover:bg-[var(--color-lime-accent-dark)]"
+                    >
+                      Live Demo
+                    </a>
+                  )}
+                  {project.githubRepo && (
+                    <a
+                      href={project.githubRepo}
+                      id={`project-github-repo-${project.slug}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full border border-white/30 px-6 py-2.5 font-heading text-sm font-semibold text-white transition-colors hover:border-[var(--color-lime-accent)] hover:text-[var(--color-lime-accent)]"
+                    >
+                      GitHub Repository
+                    </a>
+                  )}
+                </div>
+              );
+            })()}
           </div>
         </div>
       </section>

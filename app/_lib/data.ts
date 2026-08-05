@@ -25,6 +25,10 @@ export interface Project {
   programLabel?: string;
   /** When provided, replaces the Tools Used section with Backend/Frontend tech stacks. */
   techStack?: { backend: string[]; frontend: string[] };
+  /** Live demo URL — shown as a button on the project detail page (Web Dev / Front-End projects). */
+  liveDemo?: string;
+  /** GitHub repository URL — shown as a button on the project detail page (Web Dev / Front-End projects). */
+  githubRepo?: string;
 }
 
 export interface Testimonial {
@@ -82,6 +86,8 @@ export const projects: Project[] = [
     color: "#0ea5e9", // Brand Identity (Sky-500)
     galleryLayout: "square-grid",
     programLabel: "Program",
+    liveDemo: "https://tracker-io-three.vercel.app",
+    githubRepo: "https://github.com/faridhkm19/Tracker.io.git",
     techStack: {
       backend: ["Node.js", "Express", "MySQL", "JWT", "bcrypt"],
       frontend: ["Vanilla Javascript", "HTML5", "CSS3", "Chart JS"],

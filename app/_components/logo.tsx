@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export function Logo({ id = "logo" }: { id?: string }) {
+  // Toggle this to true to enable the logo, false to disable it while preserving layout space.
+  const isEnabled = false;
+
+  if (!isEnabled) {
+    return <div id={id} style={{ width: 36, height: 36 }} aria-hidden="true" />;
+  }
+
   return (
     <Link
       href="/"
