@@ -287,30 +287,30 @@ export function getAdjacentProjects(slug: string): {
 export const testimonials: Testimonial[] = [
   {
     id: "t1",
-    name: "Aisyah Ramadhani",
-    role: "Founder & CEO",
-    company: "Nova Tech",
+    name: "",
+    role: "",
+    company: "",
     avatar: "/images/avatars/aisyah.jpg",
     quote:
-      "Farid delivered a brand identity that exceeded our expectations. His ability to translate abstract ideas into a cohesive visual system is remarkable. The final result positioned us perfectly for our Series A pitch.",
+      "",
   },
   {
     id: "t2",
-    name: "Budi Santoso",
-    role: "Product Manager",
-    company: "Muse Audio",
+    name: "",
+    role: "",
+    company: "",
     avatar: "/images/avatars/budi.jpg",
     quote:
-      "Working with Farid on Muse's UI was a seamless experience. He brought both creative vision and practical thinking — every design decision was purposeful. Our user satisfaction score improved by 40% post-launch.",
+      "",
   },
   {
     id: "t3",
-    name: "Clara Wijaya",
-    role: "Editor in Chief",
-    company: "Verdure Magazine",
+    name: "",
+    role: "",
+    company: "",
     avatar: "/images/avatars/clara.jpg",
     quote:
-      "Farid's editorial layouts brought a new life to Verdure. He understood our voice immediately and translated it into visual language that our readers fell in love with. He is meticulous, creative, and a true collaborator.",
+      "",
   },
 ];
 
