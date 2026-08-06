@@ -3,8 +3,9 @@
 // ============================================================
 
 export type ContentBlock =
-  | { type: "text"; heading: string; body: string }
-  | { type: "gallery"; layout: "two-square" | "portrait-single" | "featured-plus-two"; images: string[] };
+  | { type: "text"; heading: string; body?: string }
+  | { type: "gallery"; layout: "two-square" | "portrait-single" | "featured-plus-two" | "asymmetric-two-col" | "landscape-single" | "two-by-two-grid"; images: string[] }
+  | { type: "process-timeline"; phases: { name: string; badge: string; startCol: number; endCol: number }[] };
 
 export interface Project {
   slug: string;
@@ -70,7 +71,7 @@ export const projects: Project[] = [
     description:
       "Designed a promotional campaign for SMK Sumbangsih Multimedia's student admission program, creating a consistent visual identity across print and digital media.",
     longDescription:
-      "PPDB SMK Sumbangsih Multimedia is a promotional campaign created to support the school's student admission program for the 2024/2025 academic year. The project was designed to introduce SMK Sumbangsih Multimedia to prospective students and parents through a clear, attractive, and consistent visual identity across both digital and print media. The campaign included a wide range of promotional materials such as posters, brochures, roll banners, social media content, banners, and other supporting assets, ensuring that every communication delivered the same message and visual experience. The main objective was to present the school's programs, facilities, and learning environment in a way that was informative and visually engaging. To achieve this, I developed a clean and modern design style using a structured layout, bold typography, and a vibrant color palette that reflects the school's identity. Throughout the project, I focused on creating a consistent visual system that could easily adapt to different media while maintaining strong brand recognition.",
+      "Resika App is a mobile application that connects households with waste bank operators to make managing household waste simpler and more transparent. Instead of relying on manual coordination with little visibility, users can request a waste pickup, track it in real time, and earn coins by reporting recycled items, which can later be exchanged for vouchers. As the UI/UX Designer on this project, I worked with the team from early research through to a high fidelity interactive prototype covering the full core flow, from requesting and tracking a pickup to reporting recycled items and redeeming coins.",
     tools: ["Figma", "Adobe Illustrator", "Canva"],
     coverImage: "/projects/gambarproject/UIUXRESIKA/TamplateUIUXResika.webp",
     images: [
@@ -81,9 +82,60 @@ export const projects: Project[] = [
       "/projects/gambarproject/PPDBsmb/PPDBSmb5.webp",
     ],
     featured: true,
-    color: "#06b6d4", // Using existing color or you can adjust if preferred
+    color: "#06b6d4",
     galleryLayout: "square-grid",
     programLabel: "Program",
+    contentBlocks: [
+      {
+        type: "text",
+        heading: "About this project",
+        body: "Resika App is a mobile application that connects households with waste bank operators to make managing household waste simpler and more transparent. Instead of relying on manual coordination with little visibility, users can request a waste pickup, track it in real time, and earn coins by reporting recycled items, which can later be exchanged for vouchers. As the UI/UX Designer on this project, I worked with the team from early research through to a high fidelity interactive prototype covering the full core flow, from requesting and tracking a pickup to reporting recycled items and redeeming coins.",
+      },
+      {
+        type: "gallery",
+        layout: "asymmetric-two-col",
+        images: [
+          "/projects/gambarproject/UIUXRESIKA/UIUXResika1.webp",
+          "/projects/gambarproject/UIUXRESIKA/UIUXResika2.webp",
+        ],
+      },
+      {
+        type: "text",
+        heading: "The Problem",
+        body: "Household waste management in Indonesia still relies heavily on manual, informal coordination between residents and waste banks, resulting in limited accessibility, little to no incentive for people to sort and recycle their waste, and no real way to track the process once waste is handed over. Early research confirmed this gap firsthand — users often had no visibility into whether their waste was actually picked up, and saw no clear benefit in sorting recyclables when nothing came back in return. This became the foundation for Resika App, designed around three core needs: easier coordination, transparent tracking, and a reward system that gives real value back to users.",
+      },
+      {
+        type: "gallery",
+        layout: "landscape-single",
+        images: [
+          "/projects/gambarproject/UIUXRESIKA/UIUXResika3.webp",
+        ],
+      },
+      {
+        type: "gallery",
+        layout: "two-by-two-grid",
+        images: [
+          "/projects/gambarproject/UIUXRESIKA/UIUXResika4.webp",
+          "/projects/gambarproject/UIUXRESIKA/UIUXResika5.webp",
+          "/projects/gambarproject/UIUXRESIKA/UIUXResika6.webp",
+          "/projects/gambarproject/UIUXRESIKA/UIUXResika7.webp",
+        ],
+      },
+      {
+        type: "text",
+        heading: "Design Process",
+      },
+      {
+        type: "process-timeline",
+        phases: [
+          { name: "Research",             badge: "2 weeks", startCol: 1, endCol: 2 },
+          { name: "Ideation",             badge: "3 weeks", startCol: 1, endCol: 3 },
+          { name: "Wireframes",           badge: "2 weeks", startCol: 3, endCol: 4 },
+          { name: "UI Design & Hi-Fi",             badge: "3 weeks", startCol: 4, endCol: 6 },
+          { name: "Prototype & Testing",  badge: "3 weeks", startCol: 6, endCol: 8 },
+        ],
+      },
+    ],
   },
   {
     slug: "tracker.io",
