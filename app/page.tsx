@@ -230,7 +230,7 @@ function StatsRow() {
 // ============================================================
 function FeaturedProjects() {
   return (
-    <section className="pt-24 pb-12 md:pb-12">
+    <section className="pt-10 md:pt-12 pb-12 md:pb-12">
       <div className="container-portfolio">
         {/* Section header */}
         <Reveal className="mb-12 flex items-end justify-between">
@@ -331,7 +331,7 @@ function DisciplinesMarquee() {
   return (
     <section
       aria-label="Services and disciplines"
-      className="py-2"
+      className="py-4 md:py-8"
       style={{ overflow: "hidden" }}
     >
       <div className="disciplines-marquee-wrapper">
@@ -342,7 +342,6 @@ function DisciplinesMarquee() {
             {backItems.map((label, i) => (
               <div key={i} className="marquee-item">
                 <span className="marquee-text-dark">{label}</span>
-                <span className="marquee-sep" aria-hidden="true">✦</span>
               </div>
             ))}
           </div>
@@ -354,7 +353,6 @@ function DisciplinesMarquee() {
             {frontItems.map((label, i) => (
               <div key={i} className="marquee-item">
                 <span className="marquee-text-dark">{label}</span>
-                <span className="marquee-sep" aria-hidden="true">✦</span>
               </div>
             ))}
           </div>

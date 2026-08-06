@@ -62,6 +62,30 @@ export interface TimelineItem {
 // ============================================================
 export const projects: Project[] = [
   {
+    slug: "ui-ux-resika",
+    title: "UI/UX Resika",
+    category: ["UI/UX Design"],
+    year: "2026",
+    client: "CompeteMate Bootcamp 2026 UI/UX Design",
+    description:
+      "Designed a promotional campaign for SMK Sumbangsih Multimedia's student admission program, creating a consistent visual identity across print and digital media.",
+    longDescription:
+      "PPDB SMK Sumbangsih Multimedia is a promotional campaign created to support the school's student admission program for the 2024/2025 academic year. The project was designed to introduce SMK Sumbangsih Multimedia to prospective students and parents through a clear, attractive, and consistent visual identity across both digital and print media. The campaign included a wide range of promotional materials such as posters, brochures, roll banners, social media content, banners, and other supporting assets, ensuring that every communication delivered the same message and visual experience. The main objective was to present the school's programs, facilities, and learning environment in a way that was informative and visually engaging. To achieve this, I developed a clean and modern design style using a structured layout, bold typography, and a vibrant color palette that reflects the school's identity. Throughout the project, I focused on creating a consistent visual system that could easily adapt to different media while maintaining strong brand recognition.",
+    tools: ["Figma", "Adobe Illustrator", "Canva"],
+    coverImage: "/projects/gambarproject/UIUXRESIKA/TamplateUIUXResika.webp",
+    images: [
+      "/projects/gambarproject/PPDBsmb/PPDBSmb1.webp",
+      "/projects/gambarproject/PPDBsmb/PPDBSmb2.webp",
+      "/projects/gambarproject/PPDBsmb/PPDBSmb3.webp",
+      "/projects/gambarproject/PPDBsmb/PPDBSmb4.webp",
+      "/projects/gambarproject/PPDBsmb/PPDBSmb5.webp",
+    ],
+    featured: true,
+    color: "#06b6d4", // Using existing color or you can adjust if preferred
+    galleryLayout: "square-grid",
+    programLabel: "Program",
+  },
+  {
     slug: "tracker.io",
     title: "Expense Tracker Web",
     category: "Web Development",

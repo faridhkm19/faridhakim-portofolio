@@ -250,19 +250,8 @@ body {
    ============================================================ */
 .disciplines-marquee-wrapper {
   position: relative;
-  height: 180px;
+  height: 240px;
   overflow: hidden;
-  /* Fade edges */
-  -webkit-mask-image: linear-gradient(to right,
-      transparent 0%,
-      black 12%,
-      black 88%,
-      transparent 100%);
-  mask-image: linear-gradient(to right,
-      transparent 0%,
-      black 12%,
-      black 88%,
-      transparent 100%);
 }
 
 .marquee-band {
@@ -271,7 +260,7 @@ body {
   width: 120%;
   display: flex;
   align-items: center;
-  padding: 0.875rem 0;
+  padding: 0.625rem 0;
 }
 
 /* Back band — white, tilted top-left → bottom-right */
@@ -299,6 +288,17 @@ body {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.10);
 }
 
+/* Adjust rotation angle for mobile screens to reduce overlap */
+@media (max-width: 767px) {
+  .marquee-band-back {
+    transform: translateY(-50%) rotate(-12deg);
+  }
+
+  .marquee-band-front {
+    transform: translateY(-50%) rotate(12deg);
+  }
+}
+
 .marquee-track {
   display: flex;
   white-space: nowrap;
@@ -316,13 +316,13 @@ body {
 .marquee-item {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  padding-right: 1.25rem;
+  gap: 1rem;
+  padding-right: 3rem;
 }
 
 .marquee-text-dark {
   font-family: var(--font-heading);
-  font-size: 0.8125rem;
+  font-size: 1.125rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
