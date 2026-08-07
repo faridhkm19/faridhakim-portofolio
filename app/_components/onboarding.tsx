@@ -155,10 +155,10 @@ export function Onboarding() {
                   style={{
                     display: "inline-block",
                     fontFamily: "var(--font-heading)",
-                    fontWeight: 700,
-                    // Responsive font size: small label, matching reference images
-                    fontSize: "clamp(0.875rem, 1.5vw, 1.125rem)",
-                    lineHeight: 1.1,
+                    fontWeight: 900,
+                    // Responsive font size: increased slightly
+                    fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
+                    lineHeight: 1.15,
                     letterSpacing: "-0.02em",
                     color: "var(--color-lime-accent)",
                     // Prevent layout shifts

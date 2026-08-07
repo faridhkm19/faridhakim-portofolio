@@ -1,13 +1,105 @@
 @import "tailwindcss";
 
 /* ============================================================
+   SELF-HOSTED FONTS — Satoshi
+   ============================================================ */
+
+/* Regular (400) */
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("/fonts/Satoshi-Regular.woff2") format("woff2"),
+    url("/fonts/Satoshi-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Regular Italic */
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("/fonts/Satoshi-Italic.woff2") format("woff2"),
+    url("/fonts/Satoshi-Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Medium (500) */
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("/fonts/Satoshi-Medium.woff2") format("woff2"),
+    url("/fonts/Satoshi-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium Italic */
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("/fonts/Satoshi-MediumItalic.woff2") format("woff2"),
+    url("/fonts/Satoshi-MediumItalic.woff") format("woff");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Bold (700) */
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("/fonts/Satoshi-Bold.woff2") format("woff2"),
+    url("/fonts/Satoshi-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold Italic */
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("/fonts/Satoshi-BoldItalic.woff2") format("woff2"),
+    url("/fonts/Satoshi-BoldItalic.woff") format("woff");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Black (900) — used for hero h1 font-black */
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("/fonts/Satoshi-Black.woff2") format("woff2"),
+    url("/fonts/Satoshi-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Black Italic */
+@font-face {
+  font-family: "Satoshi";
+  src:
+    url("/fonts/Satoshi-BlackItalic.woff2") format("woff2"),
+    url("/fonts/Satoshi-BlackItalic.woff") format("woff");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ============================================================
    DESIGN SYSTEM — Farid Hakim Portfolio
    Tailwind v4 configuration via @theme
    ============================================================ */
 
 @theme {
   /* === Typography === */
-  --font-heading: "Space Grotesk", sans-serif;
+  --font-heading: "Satoshi", sans-serif;
   --font-body: "Inter", sans-serif;
 
   /* === Color Palette — Monochromatic + Gold accent === */
@@ -99,6 +191,7 @@ body {
   background-color: var(--color-bg);
   color: var(--color-fg);
   font-family: var(--font-body);
+  line-height: 1.65;
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
@@ -325,7 +418,9 @@ body {
   font-size: 1.125rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  /* Satoshi's geometric structure is slightly tighter than Space Grotesk;
+     0.08em keeps uppercase readable without feeling too spread. */
+  letter-spacing: 0.08em;
   color: #0a0a0a;
   white-space: nowrap;
 }

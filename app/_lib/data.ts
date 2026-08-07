@@ -253,7 +253,7 @@ export const projects: Project[] = [
       "/projects/gambarproject/PPDBsmb/PPDBSmb4.webp",
       "/projects/gambarproject/PPDBsmb/PPDBSmb5.webp",
     ],
-    featured: true,
+    featured: false,
     color: "#06b6d4", // Using existing color or you can adjust if preferred
     galleryLayout: "square-grid",
   },
@@ -302,7 +302,7 @@ export const projects: Project[] = [
   },
   {
     slug: "pulse-brand",
-    title: "Pulse — Fitness Brand",
+    title: "Project 7",
     category: "Brand Identity",
     year: "2024",
     client: "Pulse Fitness",
@@ -321,7 +321,7 @@ export const projects: Project[] = [
   },
   {
     slug: "atlas-dashboard",
-    title: "Atlas — Analytics Dashboard",
+    title: "Project 8",
     category: "UI/UX Design",
     year: "2023",
     client: "Atlas Analytics",

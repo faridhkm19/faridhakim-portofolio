@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./_components/providers";
 import { Navbar } from "./_components/navbar";
 import { Footer } from "./_components/footer";
 import { CustomCursor } from "./_components/custom-cursor";
 import { Onboarding } from "./_components/onboarding";
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-heading",
-  display: "swap",
-});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -70,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${inter.variable}`}
+      className={`${inter.variable}`}
       suppressHydrationWarning
     >
       <body className="min-h-screen flex flex-col antialiased">

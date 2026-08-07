@@ -103,7 +103,7 @@ function Hero() {
           className="relative z-20 -mt-20 px-4 text-center"
         >
           <h1
-            className="font-heading font-black leading-[0.88] tracking-tight"
+            className="font-heading font-black leading-[0.9] tracking-tight"
             style={{ fontSize: "clamp(3rem, 11vw, 6.5rem)" }}
           >
             {/* "Farid" — blends with dark photo area above via mix-blend-mode */}
@@ -133,7 +133,7 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.7 }}
           className="relative z-0 mt-3 flex flex-col items-center gap-1.5 pb-14 text-center"
         >
-          <span className="font-heading text-sm font-medium uppercase tracking-[0.22em] text-[var(--color-fg-muted)]">
+          <span className="font-heading text-sm font-medium uppercase tracking-[0.16em] text-[var(--color-fg-muted)]">
             WEB DEVELOPER & DESIGNER
           </span>
           <div className="flex flex-col items-center gap-2 mt-4 text-[var(--color-fg-subtle)]">
@@ -274,12 +274,12 @@ function FeaturedProjects() {
                 </div>
 
                 {/* Meta area — gray bg default, lime accent on hover */}
-                <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-lime-accent)]">
+                <div className="flex items-center justify-between gap-2 px-2 py-1 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-lime-accent)]">
                   <div className="min-w-0">
-                    <h3 className="font-heading text-sm font-bold leading-snug text-[var(--color-fg)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)] truncate">
+                    <h3 className="font-heading text-sm font-bold leading-tight text-[var(--color-fg)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)] truncate">
                       {project.title}
                     </h3>
-                    <span className="text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
+                    <span className="block -mt-0.2 text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
                       {Array.isArray(project.category) ? project.category[0] : project.category}
                     </span>
                   </div>

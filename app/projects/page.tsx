@@ -4,23 +4,28 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ViewTransition } from "react";
 import { projects } from "@/app/_lib/data";
 import type { Project } from "@/app/_lib/data";
 import { Reveal } from "@/app/_components/scroll-animation";
 import { TestimonialsSection } from "./_components/testimonials-section";
+import {
+  ProjectFilter,
+  FILTER_CATEGORIES,
+  type FilterCategory,
+} from "./_components/project-filter";
 
-const categories = [
-  "All",
-  "Web Development",
-  "Front-End Development",
-  "UI/UX Design",
-  "Brand Identity",
-  "Marketing Design",
-  "Logo Design",
-] as const;
+// ─── Pre-compute category counts from static data ─────────────────────────────
 
-type Category = (typeof categories)[number];
+const categoryCounts: Record<string, number> = Object.fromEntries(
+  FILTER_CATEGORIES.slice(1).map((cat) => [
+    cat,
+    projects.filter((p) =>
+      Array.isArray(p.category)
+        ? p.category.includes(cat)
+        : p.category === cat
+    ).length,
+  ])
+);
 
 // ============================================================
 // Project Card — with whileInView appear animation
@@ -71,12 +76,12 @@ function ProjectCard({
         </div>
 
         {/* Meta area — gray bg default, lime accent on hover */}
-        <div className="flex items-center justify-between gap-2 px-3 py-2 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-lime-accent)]">
+        <div className="flex items-center justify-between gap-2 px-2 py-1 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-lime-accent)]">
           <div className="min-w-0">
-            <h2 className="font-heading text-sm font-bold leading-snug text-[var(--color-fg)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)] truncate">
+            <h2 className="font-heading text-sm font-bold leading-tight text-[var(--color-fg)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)] truncate">
               {project.title}
             </h2>
-            <span className="text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
+            <span className="block -mt-0.2 text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
               {Array.isArray(project.category) ? project.category[0] : project.category}
             </span>
           </div>
@@ -93,16 +98,24 @@ function ProjectCard({
 // Page
 // ============================================================
 export default function ProjectsPage() {
-  const [activeCategory, setActiveCategory] = useState<Category>("All");
+  const [activeCategory, setActiveCategory] = useState<FilterCategory>("All");
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const filtered =
-    activeCategory === "All"
-      ? projects
-      : projects.filter((p) =>
-        Array.isArray(p.category)
-          ? p.category.includes(activeCategory)
-          : p.category === activeCategory
-      );
+  // AND logic: project must match BOTH category filter AND search query
+  const filtered = projects.filter((p) => {
+    const matchesCategory =
+      activeCategory === "All" ||
+      (Array.isArray(p.category)
+        ? p.category.includes(activeCategory)
+        : p.category === activeCategory);
+
+    const q = searchQuery.trim().toLowerCase();
+    const matchesSearch = q === "" || p.title.toLowerCase().includes(q);
+
+    return matchesCategory && matchesSearch;
+  });
+
+  const hasActiveFilters = activeCategory !== "All" || searchQuery.trim() !== "";
 
   return (
     <div className="pt-8 pb-16 md:pt-12 md:pb-24">
@@ -114,51 +127,89 @@ export default function ProjectsPage() {
           </h1>
         </Reveal>
 
-        {/* Filter tabs */}
+        {/* Search + Filter */}
         <Reveal delay={0.1}>
-          <div
-            className="mb-10 flex flex-wrap gap-2"
-            role="group"
-            aria-label="Filter by category"
-          >
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                id={`filter-${cat.toLowerCase().replace(/\//g, "-").replace(/ /g, "-")}`}
-                onClick={() => setActiveCategory(cat)}
-                className={`rounded-full px-4 py-1.5 text-sm font-medium transition-all duration-200 ${activeCategory === cat
-                    ? "border border-transparent bg-[var(--color-lime-accent)] text-[var(--color-ink-950)]"
-                    : "border border-[var(--color-border)] text-[var(--color-fg-muted)] hover:border-[var(--color-lime-accent)]/50 hover:text-[var(--color-lime-accent)]"
-                  }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+          <ProjectFilter
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+            activeCategory={activeCategory}
+            onCategoryChange={setActiveCategory}
+            categoryCounts={categoryCounts}
+            totalCount={projects.length}
+          />
         </Reveal>
 
-        {/* Project grid — AnimatePresence handles filter transitions,
-            individual cards animate via whileInView */}
+        {/* Project grid — AnimatePresence handles filter/search transitions */}
         <AnimatePresence mode="wait">
-          <motion.div
-            key={activeCategory}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
-          >
-            {filtered.map((project, i) => (
-              <ProjectCard key={project.slug} project={project} index={i} />
-            ))}
-          </motion.div>
+          {filtered.length > 0 ? (
+            <motion.div
+              key={activeCategory + "|" + searchQuery}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+            >
+              {filtered.map((project, i) => (
+                <ProjectCard key={project.slug} project={project} index={i} />
+              ))}
+            </motion.div>
+          ) : (
+            /* ── Improved empty state ── */
+            <motion.div
+              key="empty-state"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 16 }}
+              transition={{ duration: 0.3 }}
+              className="flex flex-col items-center gap-5 py-24 text-center"
+            >
+              {/* Icon */}
+              <div className="flex h-16 w-16 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)]">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="text-[var(--color-fg-subtle)]"
+                  aria-hidden
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.35-4.35" />
+                </svg>
+              </div>
+              {/* Message */}
+              <div>
+                <p className="font-heading text-base font-semibold text-[var(--color-fg)]">
+                  {searchQuery.trim()
+                    ? `No results for "${searchQuery.trim()}"`
+                    : "No projects in this category yet."}
+                </p>
+                <p className="mt-1.5 text-sm text-[var(--color-fg-muted)]">
+                  {searchQuery.trim()
+                    ? "Try a different keyword or clear the filters."
+                    : "Check back later or browse other categories."}
+                </p>
+              </div>
+              {/* Clear all CTA */}
+              {hasActiveFilters && (
+                <button
+                  onClick={() => {
+                    setSearchQuery("");
+                    setActiveCategory("All");
+                  }}
+                  className="rounded-full border border-[var(--color-border)] px-5 py-2 text-sm text-[var(--color-fg-muted)] transition-all hover:border-[var(--color-lime-accent)] hover:text-[var(--color-lime-accent)]"
+                >
+                  Clear all filters
+                </button>
+              )}
+            </motion.div>
+          )}
         </AnimatePresence>
-
-        {filtered.length === 0 && (
-          <p className="py-20 text-center text-[var(--color-fg-subtle)]">
-            No projects in this category yet.
-          </p>
-        )}
 
         {/* Testimonials Section */}
         <TestimonialsSection />
@@ -166,3 +217,4 @@ export default function ProjectsPage() {
     </div>
   );
 }
+
