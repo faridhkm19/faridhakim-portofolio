@@ -426,30 +426,30 @@ export function getAdjacentProjects(slug: string): {
 export const testimonials: Testimonial[] = [
   {
     id: "t1",
-    name: "",
-    role: "",
+    name: "Jihan, S.Kom.",
+    role: "SMB Fest Spectro 2024",
     company: "",
-    avatar: "/images/avatars/aisyah.jpg",
+    avatar: "",
     quote:
-      "",
+      "Farid mampu menerjemahkan visi acara kami ke dalam identitas visual yang luar biasa. Pendekatannya yang menggabungkan elemen budaya dengan visual modern tidak hanya memukau audiens, tetapi juga memberikan karakter yang sangat kuat pada keseluruhan branding SMB Fest Spectro.",
   },
   {
     id: "t2",
-    name: "",
-    role: "",
+    name: "Muhamad Rojali, S.Kom.",
+    role: "PPDB SMK Sumbangsih",
     company: "",
-    avatar: "/images/avatars/budi.jpg",
+    avatar: "",
     quote:
-      "",
+      "Kolaborasi yang sangat profesional. Eksekusi desain untuk kampanye PPDB kami terstruktur dengan sangat baik, menghasilkan materi promosi yang modern dan komunikatif di berbagai platform digital maupun cetak, sehingga sukses meningkatkan daya tarik sekolah.",
   },
   {
     id: "t3",
-    name: "",
-    role: "",
+    name: "M. Sheva Kurnia",
+    role: "UI/UX Resika",
     company: "",
-    avatar: "/images/avatars/clara.jpg",
+    avatar: "",
     quote:
-      "",
+      "Keahlian riset dan perancangan UI/UX yang ditunjukkan sangat impresif. Prototipe interaktif yang dihasilkan tidak sekadar memanjakan mata, namun secara fundamental berhasil menyederhanakan alur navigasi yang kompleks menjadi pengalaman pengguna yang sangat intuitif.",
   },
 ];
 
@@ -564,7 +564,7 @@ export const personalInfo = {
   email: "faridhkm19@gmail.com",
   availableForWork: true,
   socials: {
-    github: "",
+    github: "https://github.com/faridhkm19",
     linkedin: "https://linkedin.com/in/faridhakim19",
     instagram: "https://instagram.com/faridhkimm",
   },

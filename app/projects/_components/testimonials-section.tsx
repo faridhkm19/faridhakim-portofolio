@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { testimonials } from "@/app/_lib/data";
 import { Reveal, StaggerContainer, StaggerItem } from "@/app/_components/scroll-animation";
@@ -71,7 +71,7 @@ export function TestimonialsSection() {
                     {t.name}
                   </cite>
                   <p className="text-xs text-[var(--color-fg-subtle)]">
-                    {t.role}, {t.company}
+                    {[t.role, t.company].filter(Boolean).join(", ")}
                   </p>
                 </div>
               </footer>

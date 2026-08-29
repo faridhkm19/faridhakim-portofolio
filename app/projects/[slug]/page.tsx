@@ -264,7 +264,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <Link
                   href={`/projects/${next.slug}`}
                   id={`next-project-${next.slug}`}
-                  className="group flex flex-col gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 text-right transition-all hover:border-[var(--color-orange-accent)]/40 sm:ml-auto"
+                  className="group flex flex-col gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 text-right transition-all hover:border-[var(--color-orange-accent)]/40 sm:col-start-2 sm:ml-auto"
                 >
                   <span className="text-xs text-[var(--color-fg-subtle)]">
                     Next →

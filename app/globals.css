@@ -130,7 +130,7 @@
   --color-fg: #0a0a0a;
   --color-fg-muted: #737373;
   --color-fg-subtle: #a0a0a0;
-  --color-border: #e0e0e0;
+  --color-border: #ffffff;
   --color-border-subtle: #f0f0f0;
 
   /* === Spacing Scale === */
@@ -163,7 +163,7 @@
   --color-fg: #fafafa;
   --color-fg-muted: #a0a0a0;
   --color-fg-subtle: #737373;
-  --color-border: #2e2e2e;
+  --color-border: #1a1a1a;
   --color-border-subtle: #1e1e1e;
 
   /* === Orange accent: #ff6315 (identik dengan light mode) === */

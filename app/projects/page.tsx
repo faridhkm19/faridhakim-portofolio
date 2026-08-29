@@ -56,10 +56,10 @@ function ProjectCard({
         href={`/projects/${project.slug}`}
         id={`project-card-${project.slug}`}
         data-cursor="view"
-        className="group block overflow-hidden rounded-lg border-[3px] border-[var(--color-border)] transition-colors duration-300 hover:border-[var(--color-orange-accent)]"
+        className="group block overflow-hidden rounded-lg border-[3px] border-[var(--color-border)] bg-[var(--color-bg-card)] transition-colors duration-300 hover:border-[var(--color-orange-accent)] hover:bg-[var(--color-orange-accent)]"
       >
         {/* Thumbnail */}
-        <div className="relative aspect-[4/3] overflow-hidden rounded-t-[5px] bg-[var(--color-bg-secondary)]">
+        <div className="relative aspect-[4/3] overflow-hidden bg-[var(--color-bg-secondary)]">
           <Image
             src={project.coverImage}
             alt={project.title}
@@ -76,7 +76,7 @@ function ProjectCard({
         </div>
 
         {/* Meta area — gray bg default, lime accent on hover */}
-        <div className="flex items-center justify-between gap-2 px-2 py-1 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-orange-accent)]">
+        <div className="flex items-center justify-between gap-2 px-2 py-1 bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-orange-accent)]">
           <div className="min-w-0">
             <h2 className="font-heading text-sm font-bold leading-tight text-[var(--color-fg)] transition-colors duration-300 group-hover:text-white truncate">
               {project.title}
