@@ -18,13 +18,6 @@ function Hero() {
       className="relative flex flex-col items-center overflow-hidden pb-0 pt-24 md:pt-32 -mt-16"
       aria-label="Hero"
     >
-      {/* ── Ambient glow ── */}
-      <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
-        <div className="absolute left-1/2 top-0 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/4 rounded-full bg-[var(--color-orange-accent)]/6 blur-[100px]" />
-        <div className="absolute left-1/4 bottom-1/4 h-64 w-64 rounded-full bg-[var(--color-orange-accent)]/4 blur-[60px]" />
-        <div className="absolute right-1/4 bottom-1/4 h-64 w-64 rounded-full bg-[var(--color-orange-accent)]/4 blur-[60px]" />
-      </div>
-
       {/* ── Arch photo + Name stack (photo → name → subtitles) ── */}
       <div className="relative flex w-full flex-col items-center">
         {/* Arch frame wrapper */}
@@ -375,14 +368,6 @@ function CTASection() {
       <div className="container-portfolio">
         <Reveal>
           <div className="relative overflow-hidden rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-10 md:p-16 text-center">
-            {/* Background decoration */}
-            <div
-              className="pointer-events-none absolute inset-0 -z-0"
-              aria-hidden
-            >
-              <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-orange-accent)]/8 blur-3xl" />
-            </div>
-
             <p className="relative mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-orange-accent)]">
               Let&rsquo;s Work Together
             </p>
