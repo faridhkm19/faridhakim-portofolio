@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -89,7 +89,7 @@ function SearchBar({
         placeholder="Search projects..."
         autoComplete="off"
         aria-label="Search projects by name"
-        className="w-full rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] py-2.5 pl-11 pr-10 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-all duration-200 focus:border-[var(--color-orange-accent)] focus:ring-2 focus:ring-[var(--color-orange-accent)]/20"
+        className="w-full rounded-full border border-[var(--color-border-btn)] bg-[var(--color-bg-card)] py-2.5 pl-11 pr-10 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-all duration-200 focus:border-[var(--color-orange-accent)] focus:ring-2 focus:ring-[var(--color-orange-accent)]/20"
       />
 
       {/* Clear button — visible when there is text */}
@@ -222,7 +222,7 @@ function CategoryDropdown({
         className={`flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-all duration-200 ${
           isFiltered
             ? "border-[var(--color-orange-accent)] bg-[var(--color-orange-accent)]/10 text-[var(--color-orange-accent)]"
-            : "border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-fg-muted)] hover:border-[var(--color-orange-accent)]/50 hover:text-[var(--color-fg)]"
+            : "border-[var(--color-border-btn)] bg-[var(--color-bg-card)] text-[var(--color-fg-muted)] hover:border-[var(--color-orange-accent)]/50 hover:text-[var(--color-fg)]"
         }`}
       >
         {/* Funnel icon */}
@@ -334,7 +334,7 @@ function MobileFilterSheet({
         className={`relative flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-200 ${
           isFiltered
             ? "border-[var(--color-orange-accent)] bg-[var(--color-orange-accent)]/10 text-[var(--color-orange-accent)]"
-            : "border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-fg-muted)]"
+            : "border-[var(--color-border-btn)] bg-[var(--color-bg-card)] text-[var(--color-fg-muted)]"
         }`}
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -382,7 +382,7 @@ function MobileFilterSheet({
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close filter panel"
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-fg-muted)] transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-[var(--color-border-btn)] text-[var(--color-fg-muted)] transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
                 >
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                     <path d="M18 6 6 18M6 6l12 12" />
@@ -401,7 +401,7 @@ function MobileFilterSheet({
               {isFiltered && (
                 <button
                   onClick={() => { onCategoryChange("All"); setOpen(false); }}
-                  className="mt-5 w-full rounded-full border border-[var(--color-border)] py-3 text-sm text-[var(--color-fg-muted)] transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
+                  className="mt-5 w-full rounded-full border border-[var(--color-border-btn)] py-3 text-sm text-[var(--color-fg-muted)] transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
                 >
                   Reset Filter
                 </button>

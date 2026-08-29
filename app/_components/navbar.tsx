@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -40,7 +40,7 @@ function ThemeToggle() {
       id="theme-toggle"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="relative flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-fg)] transition-all duration-300 hover:border-[var(--color-orange-accent)] hover:bg-[var(--color-orange-accent)] hover:text-white"
+      className="relative flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border-btn)] bg-[var(--color-bg-card)] text-[var(--color-fg)] transition-all duration-300 hover:border-[var(--color-orange-accent)] hover:bg-[var(--color-orange-accent)] hover:text-white"
     >
       <motion.span
         key={isDark ? "moon" : "sun"}
@@ -127,7 +127,7 @@ export function Navbar() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle mobile menu"
             aria-expanded={mobileOpen}
-            className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] md:hidden"
+            className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-lg border border-[var(--color-border-btn)] bg-[var(--color-bg-card)] md:hidden"
           >
             <motion.span
               animate={mobileOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}

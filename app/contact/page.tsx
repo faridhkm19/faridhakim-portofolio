@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -121,7 +121,7 @@ export default function ContactPage() {
                       id={`contact-social-${s.name.toLowerCase()}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2.5 rounded-lg border border-[var(--color-border)] px-3 py-2.5 text-sm font-medium text-[var(--color-fg-muted)] transition-all hover:border-[var(--color-orange-accent)]/40 hover:text-[var(--color-fg)]"
+                      className="flex items-center gap-2.5 rounded-lg border border-[var(--color-border-btn)] px-3 py-2.5 text-sm font-medium text-[var(--color-fg-muted)] transition-all hover:border-[var(--color-orange-accent)]/40 hover:text-[var(--color-fg)]"
                     >
                       <span className="font-heading text-xs font-bold text-[var(--color-orange-accent)]">
                         {s.icon}
@@ -152,7 +152,7 @@ export default function ContactPage() {
                 </p>
                 <button
                   onClick={() => setFormState("idle")}
-                  className="mt-6 rounded-full border border-[var(--color-border)] px-5 py-2 text-sm font-medium text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors"
+                  className="mt-6 rounded-full border border-[var(--color-border-btn)] px-5 py-2 text-sm font-medium text-[var(--color-fg-muted)] hover:text-[var(--color-fg)] transition-colors"
                 >
                   Send another message
                 </button>
@@ -181,7 +181,7 @@ export default function ContactPage() {
                       value={form.name}
                       onChange={handleChange}
                       placeholder="Your name"
-                      className="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-all focus:border-[var(--color-orange-accent)] focus:ring-0 focus:outline-none"
+                      className="w-full rounded-lg border border-[var(--color-border-btn)] bg-[var(--color-bg-card)] px-4 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-all focus:border-[var(--color-orange-accent)] focus:ring-0 focus:outline-none"
                     />
                   </div>
 
@@ -201,7 +201,7 @@ export default function ContactPage() {
                       value={form.email}
                       onChange={handleChange}
                       placeholder="your@email.com"
-                      className="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-all focus:border-[var(--color-orange-accent)] focus:ring-0 focus:outline-none"
+                      className="w-full rounded-lg border border-[var(--color-border-btn)] bg-[var(--color-bg-card)] px-4 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-all focus:border-[var(--color-orange-accent)] focus:ring-0 focus:outline-none"
                     />
                   </div>
                 </div>
@@ -220,7 +220,7 @@ export default function ContactPage() {
                     required
                     value={form.subject}
                     onChange={handleChange}
-                    className="w-full rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3 text-sm text-[var(--color-fg)] outline-none transition-all focus:border-[var(--color-orange-accent)] focus:ring-0 focus:outline-none"
+                    className="w-full rounded-lg border border-[var(--color-border-btn)] bg-[var(--color-bg-card)] px-4 py-3 text-sm text-[var(--color-fg)] outline-none transition-all focus:border-[var(--color-orange-accent)] focus:ring-0 focus:outline-none"
                   >
                     <option value="">Select a topic…</option>
                     <option value="internship">Internship Opportunity</option>
@@ -247,7 +247,7 @@ export default function ContactPage() {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Tell me about your project, company, or opportunity…"
-                    className="w-full resize-none rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] px-4 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-all focus:border-[var(--color-orange-accent)] focus:ring-0 focus:outline-none"
+                    className="w-full resize-none rounded-lg border border-[var(--color-border-btn)] bg-[var(--color-bg-card)] px-4 py-3 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-all focus:border-[var(--color-orange-accent)] focus:ring-0 focus:outline-none"
                   />
                 </div>
 

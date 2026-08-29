@@ -202,7 +202,7 @@ export default function ProjectsPage() {
                     setSearchQuery("");
                     setActiveCategory("All");
                   }}
-                  className="rounded-full border border-[var(--color-border)] px-5 py-2 text-sm text-[var(--color-fg-muted)] transition-all hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
+                  className="rounded-full border border-[var(--color-border-btn)] px-5 py-2 text-sm text-[var(--color-fg-muted)] transition-all hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
                 >
                   Clear all filters
                 </button>

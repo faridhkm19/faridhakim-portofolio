@@ -288,7 +288,7 @@ function FeaturedProjects() {
         <Reveal className="mt-8 sm:hidden">
           <Link
             href="/projects"
-            className="block w-full rounded-full border border-[var(--color-border)] py-3 text-center text-sm font-medium text-[var(--color-fg-muted)] hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)] transition-colors"
+            className="block w-full rounded-full border border-[var(--color-border-btn)] py-3 text-center text-sm font-medium text-[var(--color-fg-muted)] hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)] transition-colors"
           >
             View all projects →
           </Link>
@@ -392,7 +392,7 @@ function CTASection() {
               <a
                 href={`mailto:${personalInfo.email}`}
                 id="home-cta-email"
-                className="rounded-full border border-[var(--color-border)] px-8 py-3 font-heading text-sm font-semibold text-[var(--color-fg)] transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
+                className="rounded-full border border-[var(--color-border-btn)] px-8 py-3 font-heading text-sm font-semibold text-[var(--color-fg)] transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
               >
                 {personalInfo.email}
               </a>

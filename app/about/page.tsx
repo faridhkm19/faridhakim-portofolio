@@ -42,7 +42,7 @@ export default function AboutPage() {
               <a
                 href={`mailto:${personalInfo.email}`}
                 id="about-email"
-                className="rounded-full border border-[var(--color-border)] px-6 py-2.5 font-heading text-sm font-semibold text-[var(--color-fg)] transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
+                className="rounded-full border border-[var(--color-border-btn)] px-6 py-2.5 font-heading text-sm font-semibold text-[var(--color-fg)] transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
               >
                 Say Hello
               </a>
@@ -57,7 +57,7 @@ export default function AboutPage() {
                   id={`about-social-${key}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-[var(--color-border)] px-4 py-1.5 text-xs font-medium text-[var(--color-fg-muted)] capitalize transition-all hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
+                  className="rounded-full border border-[var(--color-border-btn)] px-4 py-1.5 text-xs font-medium text-[var(--color-fg)] capitalize transition-all hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
                 >
                   {key}
                 </a>

@@ -132,6 +132,7 @@
   --color-fg-subtle: #a0a0a0;
   --color-border: #ffffff;
   --color-border-subtle: #f0f0f0;
+  --color-border-btn: #d4d4d4; /* neutral-300 equivalent */
 
   /* === Spacing Scale === */
   --spacing-18: 4.5rem;
@@ -165,6 +166,7 @@
   --color-fg-subtle: #737373;
   --color-border: #1a1a1a;
   --color-border-subtle: #1e1e1e;
+  --color-border-btn: #404040; /* neutral-700 equivalent */
 
   /* === Orange accent: #ff6315 (identik dengan light mode) === */
   --color-orange-accent: hsl(20, 100%, 54%);
