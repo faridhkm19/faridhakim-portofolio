@@ -46,7 +46,7 @@ function Hero() {
             }}
           >
             <Image
-              src="/projects/gambarproject/PhotoFarid.png"
+              src="/projects/gambarproject/PhotoFarid.webp"
               alt="Farid Hakim — Web Developer & Graphic Designer"
               fill
               priority

@@ -72,7 +72,7 @@ export default function AboutPage() {
               <div className="absolute -right-4 -bottom-4 h-full w-full rounded-2xl border-2 border-[var(--color-lime-accent)]/30" />
               <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[var(--color-bg-secondary)]">
                 <Image
-                  src="/projects/gambarproject/PhotoFarid.png"
+                  src="/projects/gambarproject/PhotoFarid.webp"
                   alt="Farid Hakim — Graphic Designer"
                   fill
                   className="object-cover"

@@ -21,8 +21,9 @@ export const metadata: Metadata = {
   description:
     "Farid Hakim is a Jakarta-based graphic designer specializing in brand identity, UI/UX design, and editorial design. Available for internship and full-time opportunities.",
   icons: {
-    icon: "/projects/gambarproject/FotoFaridHakim.webp",
-    apple: "/projects/gambarproject/FotoFaridHakim.webp",
+    icon: "/icon.png",
+    shortcut: "/favicon.ico",
+    apple: "/icon.png",
   },
   keywords: [
     "graphic designer",
