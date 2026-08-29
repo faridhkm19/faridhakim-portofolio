@@ -35,14 +35,14 @@ export default function AboutPage() {
               <Link
                 href="/projects"
                 id="about-view-work"
-                className="rounded-full bg-[var(--color-lime-accent)] px-6 py-2.5 font-heading text-sm font-semibold text-[var(--color-ink-950)] transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-lime-accent)_40%,transparent)] hover:bg-[var(--color-lime-accent-dark)]"
+                className="rounded-full bg-[var(--color-orange-accent)] px-6 py-2.5 font-heading text-sm font-semibold text-white transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-orange-accent)_40%,transparent)] hover:bg-[var(--color-orange-accent-dark)]"
               >
                 View My Work
               </Link>
               <a
                 href={`mailto:${personalInfo.email}`}
                 id="about-email"
-                className="rounded-full border border-[var(--color-border)] px-6 py-2.5 font-heading text-sm font-semibold text-[var(--color-fg)] transition-colors hover:border-[var(--color-lime-accent)] hover:text-[var(--color-lime-accent)]"
+                className="rounded-full border border-[var(--color-border)] px-6 py-2.5 font-heading text-sm font-semibold text-[var(--color-fg)] transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
               >
                 Say Hello
               </a>
@@ -57,7 +57,7 @@ export default function AboutPage() {
                   id={`about-social-${key}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-[var(--color-border)] px-4 py-1.5 text-xs font-medium text-[var(--color-fg-muted)] capitalize transition-all hover:border-[var(--color-lime-accent)]/50 hover:text-[var(--color-fg)]"
+                  className="rounded-full border border-[var(--color-border)] px-4 py-1.5 text-xs font-medium text-[var(--color-fg-muted)] capitalize transition-all hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
                 >
                   {key}
                 </a>
@@ -69,7 +69,7 @@ export default function AboutPage() {
           <Reveal direction="left" className="flex justify-center lg:justify-end">
             <div className="relative h-80 w-64 md:h-96 md:w-72">
               {/* Decorative border offset */}
-              <div className="absolute -right-4 -bottom-4 h-full w-full rounded-2xl border-2 border-[var(--color-lime-accent)]/30" />
+              <div className="absolute -right-4 -bottom-4 h-full w-full rounded-2xl border-2 border-[var(--color-orange-accent)]/30" />
               <div className="relative h-full w-full overflow-hidden rounded-2xl bg-[var(--color-bg-secondary)]">
                 <Image
                   src="/projects/gambarproject/PhotoFarid.webp"
@@ -113,7 +113,7 @@ export default function AboutPage() {
                       <h4 className="font-heading text-base font-semibold text-[var(--color-fg)]">
                         {item.title}
                       </h4>
-                      <p className="text-sm text-[var(--color-lime-accent)]">
+                      <p className="text-sm text-[var(--color-orange-accent)]">
                         {item.place}
                       </p>
                     </div>

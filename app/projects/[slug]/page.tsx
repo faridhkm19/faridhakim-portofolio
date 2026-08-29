@@ -60,7 +60,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             <div className="mb-3 flex items-center gap-3">
               <span
                 className="h-2 w-2 rounded-full"
-                style={{ backgroundColor: "var(--color-lime-accent)" }}
+                style={{ backgroundColor: "var(--color-orange-accent)" }}
               />
               <span className="text-sm font-medium text-white/70">
                 {Array.isArray(project.category) ? project.category.join(", ") : project.category}
@@ -87,7 +87,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                       id={`project-live-demo-${project.slug}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full bg-[var(--color-lime-accent)] px-6 py-2.5 font-heading text-sm font-semibold text-[var(--color-ink-950)] transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-lime-accent)_40%,transparent)] hover:bg-[var(--color-lime-accent-dark)]"
+                      className="rounded-full bg-[var(--color-orange-accent)] px-6 py-2.5 font-heading text-sm font-semibold text-white transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-orange-accent)_40%,transparent)] hover:bg-[var(--color-orange-accent-dark)]"
                     >
                       Live Demo 
                     </a>
@@ -98,7 +98,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                       id={`project-download-installer-${project.slug}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full bg-[var(--color-lime-accent)] px-6 py-2.5 font-heading text-sm font-semibold text-[var(--color-ink-950)] transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-lime-accent)_40%,transparent)] hover:bg-[var(--color-lime-accent-dark)]"
+                      className="rounded-full bg-[var(--color-orange-accent)] px-6 py-2.5 font-heading text-sm font-semibold text-white transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-orange-accent)_40%,transparent)] hover:bg-[var(--color-orange-accent-dark)]"
                     >
                       Download Installer 
                     </a>
@@ -109,7 +109,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                       id={`project-github-repo-${project.slug}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="rounded-full border border-white/30 px-6 py-2.5 font-heading text-sm font-semibold text-white transition-colors hover:border-[var(--color-lime-accent)] hover:text-[var(--color-lime-accent)]"
+                      className="rounded-full border border-white/30 px-6 py-2.5 font-heading text-sm font-semibold text-white transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
                     >
                       GitHub Repository
                     </a>
@@ -151,7 +151,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               {/* Accent line */}
               <div
                 className="h-1 w-12 rounded-full"
-                style={{ backgroundColor: "var(--color-lime-accent)" }}
+                style={{ backgroundColor: "var(--color-orange-accent)" }}
               />
 
               <div>
@@ -250,12 +250,12 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <Link
                   href={`/projects/${prev.slug}`}
                   id={`prev-project-${prev.slug}`}
-                  className="group flex flex-col gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 transition-all hover:border-[var(--color-lime-accent)]/40"
+                  className="group flex flex-col gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 transition-all hover:border-[var(--color-orange-accent)]/40"
                 >
                   <span className="text-xs text-[var(--color-fg-subtle)]">
                     ← Previous
                   </span>
-                  <span className="font-heading font-semibold text-[var(--color-fg)] transition-colors group-hover:text-[var(--color-lime-accent)]">
+                  <span className="font-heading font-semibold text-[var(--color-fg)] transition-colors group-hover:text-[var(--color-orange-accent)]">
                     {prev.title}
                   </span>
                 </Link>
@@ -264,12 +264,12 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <Link
                   href={`/projects/${next.slug}`}
                   id={`next-project-${next.slug}`}
-                  className="group flex flex-col gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 text-right transition-all hover:border-[var(--color-lime-accent)]/40 sm:ml-auto"
+                  className="group flex flex-col gap-2 rounded-lg border border-[var(--color-border)] bg-[var(--color-bg-card)] p-5 text-right transition-all hover:border-[var(--color-orange-accent)]/40 sm:ml-auto"
                 >
                   <span className="text-xs text-[var(--color-fg-subtle)]">
                     Next →
                   </span>
-                  <span className="font-heading font-semibold text-[var(--color-fg)] transition-colors group-hover:text-[var(--color-lime-accent)]">
+                  <span className="font-heading font-semibold text-[var(--color-fg)] transition-colors group-hover:text-[var(--color-orange-accent)]">
                     {next.title}
                   </span>
                 </Link>
@@ -283,7 +283,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <Link
             href="/projects"
             id="back-to-projects"
-            className="inline-flex items-center gap-2 text-sm text-[var(--color-fg-muted)] underline-lime hover:text-[var(--color-fg)] transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-[var(--color-fg-muted)] underline-orange hover:text-[var(--color-fg)] transition-colors"
           >
             ← Back to all projects
           </Link>

@@ -20,9 +20,9 @@ function Hero() {
     >
       {/* ── Ambient glow ── */}
       <div className="pointer-events-none absolute inset-0 -z-10" aria-hidden>
-        <div className="absolute left-1/2 top-0 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/4 rounded-full bg-[var(--color-lime-accent)]/6 blur-[100px]" />
-        <div className="absolute left-1/4 bottom-1/4 h-64 w-64 rounded-full bg-[var(--color-lime-accent)]/4 blur-[60px]" />
-        <div className="absolute right-1/4 bottom-1/4 h-64 w-64 rounded-full bg-[var(--color-lime-accent)]/4 blur-[60px]" />
+        <div className="absolute left-1/2 top-0 h-[32rem] w-[32rem] -translate-x-1/2 -translate-y-1/4 rounded-full bg-[var(--color-orange-accent)]/6 blur-[100px]" />
+        <div className="absolute left-1/4 bottom-1/4 h-64 w-64 rounded-full bg-[var(--color-orange-accent)]/4 blur-[60px]" />
+        <div className="absolute right-1/4 bottom-1/4 h-64 w-64 rounded-full bg-[var(--color-orange-accent)]/4 blur-[60px]" />
       </div>
 
       {/* ── Arch photo + Name stack (photo → name → subtitles) ── */}
@@ -75,7 +75,7 @@ function Hero() {
             <Link
               href="/projects"
               id="hero-cta-projects"
-              className="flex items-center gap-2 rounded-full bg-[var(--color-lime-accent)] px-5 py-2.5 font-heading text-xs font-semibold text-[var(--color-ink-950)] shadow-lg transition-all duration-300 hover:bg-[var(--color-lime-accent-dark)] hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-lime-accent)_45%,transparent)] whitespace-nowrap"
+              className="flex items-center gap-2 rounded-full bg-[var(--color-orange-accent)] px-5 py-2.5 font-heading text-xs font-semibold text-white shadow-lg transition-all duration-300 hover:bg-[var(--color-orange-accent-dark)] hover:shadow-[0_0_20px_color-mix(in_srgb,var(--color-orange-accent)_45%,transparent)] whitespace-nowrap"
             >
               View My Work
               <svg
@@ -242,7 +242,7 @@ function FeaturedProjects() {
           <Link
             href="/projects"
             id="home-view-all-projects"
-            className="hidden text-sm font-medium text-[var(--color-fg-muted)] underline-lime hover:text-[var(--color-fg)] sm:block"
+            className="hidden text-sm font-medium text-[var(--color-fg-muted)] underline-orange hover:text-[var(--color-fg)] sm:block"
           >
             View all →
           </Link>
@@ -255,7 +255,7 @@ function FeaturedProjects() {
               <Link
                 href={`/projects/${project.slug}`}
                 id={`home-project-${project.slug}`}
-                className="group block overflow-hidden rounded-lg border-[3px] border-[var(--color-border)] transition-colors duration-300 hover:border-[var(--color-lime-accent)]"
+                className="group block overflow-hidden rounded-lg border-[3px] border-[var(--color-border)] transition-colors duration-300 hover:border-[var(--color-orange-accent)]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-t-[5px] bg-[var(--color-bg-secondary)]">
                   <Image
@@ -267,23 +267,23 @@ function FeaturedProjects() {
                   />
                   {/* Overlay on hover */}
                   <div className="absolute inset-0 bg-[var(--color-ink-950)]/0 transition-all duration-300 group-hover:bg-[var(--color-ink-950)]/50 flex items-center justify-center">
-                    <span className="translate-y-4 rounded-full bg-[var(--color-lime-accent)] px-5 py-2 font-heading text-sm font-semibold text-[var(--color-ink-950)] opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                    <span className="translate-y-4 rounded-full bg-[var(--color-orange-accent)] px-5 py-2 font-heading text-sm font-semibold text-white opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                       View Project →
                     </span>
                   </div>
                 </div>
 
-                {/* Meta area — gray bg default, lime accent on hover */}
-                <div className="flex items-center justify-between gap-2 px-2 py-1 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-lime-accent)]">
+                {/* Meta area — gray bg default, orange accent on hover */}
+                <div className="flex items-center justify-between gap-2 px-2 py-1 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-orange-accent)]">
                   <div className="min-w-0">
-                    <h3 className="font-heading text-sm font-bold leading-tight text-[var(--color-fg)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)] truncate">
+                    <h3 className="font-heading text-sm font-bold leading-tight text-[var(--color-fg)] transition-colors duration-300 group-hover:text-white truncate">
                       {project.title}
                     </h3>
-                    <span className="block -mt-0.2 text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
+                    <span className="block -mt-0.2 text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-white">
                       {Array.isArray(project.category) ? project.category[0] : project.category}
                     </span>
                   </div>
-                  <span className="flex-shrink-0 text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
+                  <span className="flex-shrink-0 text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-white">
                     {project.year}
                   </span>
                 </div>
@@ -295,7 +295,7 @@ function FeaturedProjects() {
         <Reveal className="mt-8 sm:hidden">
           <Link
             href="/projects"
-            className="block w-full rounded-full border border-[var(--color-border)] py-3 text-center text-sm font-medium text-[var(--color-fg-muted)] hover:border-[var(--color-lime-accent)] hover:text-[var(--color-lime-accent)] transition-colors"
+            className="block w-full rounded-full border border-[var(--color-border)] py-3 text-center text-sm font-medium text-[var(--color-fg-muted)] hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)] transition-colors"
           >
             View all projects →
           </Link>
@@ -349,12 +349,12 @@ function DisciplinesMarquee() {
           </div>
         </div>
 
-        {/* ── Lapisan DEPAN — lime-accent, diagonal kanan (+6deg), gerak ← */}
+        {/* ── Lapisan DEPAN — orange-accent, diagonal kanan (+6deg), gerak ← */}
         <div className="marquee-band marquee-band-front">
           <div className="marquee-track marquee-track-rtl">
             {frontItems.map((label, i) => (
               <div key={i} className="marquee-item">
-                <span className="marquee-text-dark">{label}</span>
+                <span className="marquee-text-light">{label}</span>
               </div>
             ))}
           </div>
@@ -380,10 +380,10 @@ function CTASection() {
               className="pointer-events-none absolute inset-0 -z-0"
               aria-hidden
             >
-              <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-lime-accent)]/8 blur-3xl" />
+              <div className="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[var(--color-orange-accent)]/8 blur-3xl" />
             </div>
 
-            <p className="relative mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-lime-accent)]">
+            <p className="relative mb-3 text-xs font-semibold uppercase tracking-widest text-[var(--color-orange-accent)]">
               Let&rsquo;s Work Together
             </p>
             <h2 className="font-heading text-3xl font-bold text-[var(--color-fg)] md:text-4xl">
@@ -399,7 +399,7 @@ function CTASection() {
                 <Link
                   href="/contact"
                   id="home-cta-contact"
-                  className="rounded-full bg-[var(--color-lime-accent)] px-8 py-3 font-heading text-sm font-semibold text-[var(--color-ink-950)] transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-lime-accent)_35%,transparent)] hover:bg-[var(--color-lime-accent-dark)]"
+                  className="rounded-full bg-[var(--color-orange-accent)] px-8 py-3 font-heading text-sm font-semibold text-white transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-orange-accent)_35%,transparent)] hover:bg-[var(--color-orange-accent-dark)]"
                 >
                   Get In Touch
                 </Link>
@@ -407,7 +407,7 @@ function CTASection() {
               <a
                 href={`mailto:${personalInfo.email}`}
                 id="home-cta-email"
-                className="rounded-full border border-[var(--color-border)] px-8 py-3 font-heading text-sm font-semibold text-[var(--color-fg)] transition-colors hover:border-[var(--color-lime-accent)] hover:text-[var(--color-lime-accent)]"
+                className="rounded-full border border-[var(--color-border)] px-8 py-3 font-heading text-sm font-semibold text-[var(--color-fg)] transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
               >
                 {personalInfo.email}
               </a>

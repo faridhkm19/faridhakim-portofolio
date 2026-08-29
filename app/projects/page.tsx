@@ -56,7 +56,7 @@ function ProjectCard({
         href={`/projects/${project.slug}`}
         id={`project-card-${project.slug}`}
         data-cursor="view"
-        className="group block overflow-hidden rounded-lg border-[3px] border-[var(--color-border)] transition-colors duration-300 hover:border-[var(--color-lime-accent)]"
+        className="group block overflow-hidden rounded-lg border-[3px] border-[var(--color-border)] transition-colors duration-300 hover:border-[var(--color-orange-accent)]"
       >
         {/* Thumbnail */}
         <div className="relative aspect-[4/3] overflow-hidden rounded-t-[5px] bg-[var(--color-bg-secondary)]">
@@ -76,16 +76,16 @@ function ProjectCard({
         </div>
 
         {/* Meta area — gray bg default, lime accent on hover */}
-        <div className="flex items-center justify-between gap-2 px-2 py-1 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-lime-accent)]">
+        <div className="flex items-center justify-between gap-2 px-2 py-1 rounded-b-[5px] bg-[var(--color-bg-card)] transition-colors duration-300 group-hover:bg-[var(--color-orange-accent)]">
           <div className="min-w-0">
-            <h2 className="font-heading text-sm font-bold leading-tight text-[var(--color-fg)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)] truncate">
+            <h2 className="font-heading text-sm font-bold leading-tight text-[var(--color-fg)] transition-colors duration-300 group-hover:text-white truncate">
               {project.title}
             </h2>
-            <span className="block -mt-0.2 text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
+            <span className="block -mt-0.2 text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-white">
               {Array.isArray(project.category) ? project.category[0] : project.category}
             </span>
           </div>
-          <span className="flex-shrink-0 text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-[var(--color-ink-950)]/70">
+          <span className="flex-shrink-0 text-[11px] text-[var(--color-fg-muted)] transition-colors duration-300 group-hover:text-white">
             {project.year}
           </span>
         </div>
@@ -202,7 +202,7 @@ export default function ProjectsPage() {
                     setSearchQuery("");
                     setActiveCategory("All");
                   }}
-                  className="rounded-full border border-[var(--color-border)] px-5 py-2 text-sm text-[var(--color-fg-muted)] transition-all hover:border-[var(--color-lime-accent)] hover:text-[var(--color-lime-accent)]"
+                  className="rounded-full border border-[var(--color-border)] px-5 py-2 text-sm text-[var(--color-fg-muted)] transition-all hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
                 >
                   Clear all filters
                 </button>

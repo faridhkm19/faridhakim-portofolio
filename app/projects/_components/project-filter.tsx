@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -89,7 +89,7 @@ function SearchBar({
         placeholder="Search projects..."
         autoComplete="off"
         aria-label="Search projects by name"
-        className="w-full rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] py-2.5 pl-11 pr-10 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-all duration-200 focus:border-[var(--color-lime-accent)] focus:ring-2 focus:ring-[var(--color-lime-accent)]/20"
+        className="w-full rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] py-2.5 pl-11 pr-10 text-sm text-[var(--color-fg)] placeholder:text-[var(--color-fg-subtle)] outline-none transition-all duration-200 focus:border-[var(--color-orange-accent)] focus:ring-2 focus:ring-[var(--color-orange-accent)]/20"
       />
 
       {/* Clear button — visible when there is text */}
@@ -139,7 +139,7 @@ function CategoryList({
               onClick={() => onSelect(cat)}
               className={`flex w-full items-center justify-between gap-3 rounded-lg px-3 py-2.5 text-left text-sm transition-all duration-150 ${
                 isActive
-                  ? "bg-[var(--color-lime-accent)]/10 text-[var(--color-lime-accent)]"
+                  ? "bg-[var(--color-orange-accent)]/10 text-[var(--color-orange-accent)]"
                   : "text-[var(--color-fg-muted)] hover:bg-[var(--color-bg-secondary)] hover:text-[var(--color-fg)]"
               }`}
             >
@@ -148,19 +148,19 @@ function CategoryList({
                 <span
                   className={`flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full border-2 transition-colors ${
                     isActive
-                      ? "border-[var(--color-lime-accent)]"
+                      ? "border-[var(--color-orange-accent)]"
                       : "border-[var(--color-border)]"
                   }`}
                 >
                   {isActive && (
-                    <span className="h-2 w-2 rounded-full bg-[var(--color-lime-accent)]" />
+                    <span className="h-2 w-2 rounded-full bg-[var(--color-orange-accent)]" />
                   )}
                 </span>
                 {cat}
               </span>
               <span
                 className={`text-xs tabular-nums ${
-                  isActive ? "text-[var(--color-lime-accent)]/70" : "text-[var(--color-fg-subtle)]"
+                  isActive ? "text-[var(--color-orange-accent)]/70" : "text-[var(--color-fg-subtle)]"
                 }`}
               >
                 {count}
@@ -221,8 +221,8 @@ function CategoryDropdown({
         aria-label="Filter by category"
         className={`flex items-center gap-2 rounded-full border px-4 py-2.5 text-sm font-medium whitespace-nowrap transition-all duration-200 ${
           isFiltered
-            ? "border-[var(--color-lime-accent)] bg-[var(--color-lime-accent)]/10 text-[var(--color-lime-accent)]"
-            : "border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-fg-muted)] hover:border-[var(--color-lime-accent)]/50 hover:text-[var(--color-fg)]"
+            ? "border-[var(--color-orange-accent)] bg-[var(--color-orange-accent)]/10 text-[var(--color-orange-accent)]"
+            : "border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-fg-muted)] hover:border-[var(--color-orange-accent)]/50 hover:text-[var(--color-fg)]"
         }`}
       >
         {/* Funnel icon */}
@@ -277,7 +277,7 @@ function CategoryDropdown({
                 >
                   <button
                     onClick={() => { onCategoryChange("All"); setOpen(false); }}
-                    className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs text-[var(--color-fg-subtle)] transition-colors hover:text-[var(--color-lime-accent)]"
+                    className="flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-xs text-[var(--color-fg-subtle)] transition-colors hover:text-[var(--color-orange-accent)]"
                   >
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                       <path d="M3 6h18M8 6V4h8v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
@@ -333,7 +333,7 @@ function MobileFilterSheet({
         aria-label="Open filter panel"
         className={`relative flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border transition-all duration-200 ${
           isFiltered
-            ? "border-[var(--color-lime-accent)] bg-[var(--color-lime-accent)]/10 text-[var(--color-lime-accent)]"
+            ? "border-[var(--color-orange-accent)] bg-[var(--color-orange-accent)]/10 text-[var(--color-orange-accent)]"
             : "border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-fg-muted)]"
         }`}
       >
@@ -342,7 +342,7 @@ function MobileFilterSheet({
         </svg>
         {/* Active dot indicator */}
         {isFiltered && (
-          <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-[var(--color-lime-accent)] ring-2 ring-[var(--color-bg)]" />
+          <span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full bg-[var(--color-orange-accent)] ring-2 ring-[var(--color-bg)]" />
         )}
       </button>
 
@@ -382,7 +382,7 @@ function MobileFilterSheet({
                 <button
                   onClick={() => setOpen(false)}
                   aria-label="Close filter panel"
-                  className="flex h-8 w-8 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-fg-muted)] transition-colors hover:border-[var(--color-lime-accent)] hover:text-[var(--color-lime-accent)]"
+                  className="flex h-8 w-8 items-center justify-center rounded-full border border-[var(--color-border)] text-[var(--color-fg-muted)] transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
                 >
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                     <path d="M18 6 6 18M6 6l12 12" />
@@ -401,7 +401,7 @@ function MobileFilterSheet({
               {isFiltered && (
                 <button
                   onClick={() => { onCategoryChange("All"); setOpen(false); }}
-                  className="mt-5 w-full rounded-full border border-[var(--color-border)] py-3 text-sm text-[var(--color-fg-muted)] transition-colors hover:border-[var(--color-lime-accent)] hover:text-[var(--color-lime-accent)]"
+                  className="mt-5 w-full rounded-full border border-[var(--color-border)] py-3 text-sm text-[var(--color-fg-muted)] transition-colors hover:border-[var(--color-orange-accent)] hover:text-[var(--color-orange-accent)]"
                 >
                   Reset Filter
                 </button>
@@ -437,7 +437,7 @@ function ActiveFilterBadge({
           <button
             onClick={onClear}
             aria-label={`Remove filter: ${category}`}
-            className="flex items-center gap-1.5 rounded-full border border-[var(--color-lime-accent)]/30 bg-[var(--color-lime-accent)]/10 px-3 py-1 text-xs font-medium text-[var(--color-lime-accent)] transition-all hover:bg-[var(--color-lime-accent)]/20"
+            className="flex items-center gap-1.5 rounded-full border border-[var(--color-orange-accent)]/30 bg-[var(--color-orange-accent)]/10 px-3 py-1 text-xs font-medium text-[var(--color-orange-accent)] transition-all hover:bg-[var(--color-orange-accent)]/20"
           >
             {category}
             <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden>

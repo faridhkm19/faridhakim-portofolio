@@ -424,8 +424,8 @@ function ProcessTimeline({
             <motion.span
               className="flex-shrink-0 rounded-full px-2 py-0.5 text-[10px] font-bold leading-none sm:text-xs"
               style={{
-                backgroundColor: "var(--color-lime-accent)",
-                color: "var(--color-ink-950)",
+                backgroundColor: "var(--color-orange-accent)",
+                color: "#ffffff",
               }}
               initial={{ scale: 0.65, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}

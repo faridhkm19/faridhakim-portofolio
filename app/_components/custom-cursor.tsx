@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
@@ -123,7 +123,7 @@ export function CustomCursor() {
           translateX: "-50%",
           translateY: "-50%",
           borderRadius: "50%",
-          backgroundColor: "var(--color-lime-accent)",
+          backgroundColor: "var(--color-orange-accent)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

@@ -102,7 +102,7 @@
   --font-heading: "Satoshi", sans-serif;
   --font-body: "Inter", sans-serif;
 
-  /* === Color Palette — Monochromatic + Gold accent === */
+  /* === Color Palette — Monochromatic + Orange accent === */
 
   /* Neutrals */
   --color-ink-950: #0a0a0a;
@@ -117,10 +117,10 @@
   --color-ink-100: #f0f0f0;
   --color-ink-50: #fafafa;
 
-  /* Gold / Warm Yellow accent */
-  --color-lime-accent: hsl(45, 95%, 65%);
-  --color-lime-accent-dark: hsl(43, 90%, 58%);
-  --color-lime-accent-light: hsl(47, 90%, 75%);
+  /* === Orange accent: #ff6315 === */
+  --color-orange-accent: hsl(20, 100%, 54%);
+  --color-orange-accent-dark: hsl(20, 100%, 44%);
+  --color-orange-accent-light: hsl(20, 100%, 75%);
 
   /* Semantic tokens — light mode defaults */
   --color-bg: hsl(0, 0%, 97%);
@@ -166,10 +166,10 @@
   --color-border: #2e2e2e;
   --color-border-subtle: #1e1e1e;
 
-  /* Gold / Warm Yellow accent (Dark Mode) */
-  --color-lime-accent: hsl(45, 90%, 60%);
-  --color-lime-accent-dark: hsl(43, 88%, 52%);
-  --color-lime-accent-light: hsl(47, 85%, 70%);
+  /* === Orange accent: #ff6315 (identik dengan light mode) === */
+  --color-orange-accent: hsl(20, 100%, 54%);
+  --color-orange-accent-dark: hsl(20, 100%, 44%);
+  --color-orange-accent-light: hsl(20, 100%, 75%);
 }
 
 /* ============================================================
@@ -212,8 +212,8 @@ body {
 
 /* Text selection style */
 ::selection {
-  background-color: var(--color-lime-accent);
-  color: var(--color-ink-950);
+  background-color: var(--color-orange-accent);
+  color: #ffffff;
 }
 
 /* ============================================================
@@ -233,7 +233,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-lime-accent);
+  background: var(--color-orange-accent);
 }
 
 /* ============================================================
@@ -364,11 +364,11 @@ body {
   z-index: 1;
 }
 
-/* Front band — lime accent, tilted top-right → bottom-left (opposite diagonal) */
+/* Front band — orange accent, tilted top-right → bottom-left (opposite diagonal) */
 .marquee-band-front {
   top: 50%;
   transform: translateY(-50%) rotate(6deg);
-  background-color: var(--color-lime-accent);
+  background-color: var(--color-orange-accent);
   z-index: 2;
 }
 
@@ -422,6 +422,16 @@ body {
      0.08em keeps uppercase readable without feeling too spread. */
   letter-spacing: 0.08em;
   color: #0a0a0a;
+  white-space: nowrap;
+}
+
+.marquee-text-light {
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffffff;
   white-space: nowrap;
 }
 
@@ -531,22 +541,22 @@ body {
   border: 1px solid var(--color-border);
 }
 
-/* Lime accent gradient text */
-.text-gradient-lime {
+/* Orange accent gradient text */
+.text-gradient-orange {
   background: linear-gradient(135deg,
-      var(--color-lime-accent) 0%,
-      var(--color-lime-accent-light) 50%,
+      var(--color-orange-accent) 0%,
+      var(--color-orange-accent-light) 50%,
       var(--color-fg) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Shimmer text effect */
+/* Shimmer text effect — orange accent mid-glow */
 .text-shimmer {
   background: linear-gradient(90deg,
       var(--color-fg) 0%,
-      var(--color-lime-accent) 50%,
+      var(--color-orange-accent) 50%,
       var(--color-fg) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -555,25 +565,25 @@ body {
   animation: shimmer 3s linear infinite;
 }
 
-/* Lime accent underline */
-.underline-lime {
+/* Orange accent underline */
+.underline-orange {
   position: relative;
 }
 
-.underline-lime::after {
+.underline-orange::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: -2px;
   width: 100%;
   height: 2px;
-  background: var(--color-lime-accent);
+  background: var(--color-orange-accent);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s var(--ease-smooth);
 }
 
-.underline-lime:hover::after {
+.underline-orange:hover::after {
   transform: scaleX(1);
 }
 
@@ -621,7 +631,8 @@ body {
     flex-direction: column;
     justify-content: center;
     gap: 0.5rem;
-    background: var(--color-lime-accent);
+    background: var(--color-orange-accent);
+    color: #ffffff;
     padding: 1.5rem;
     transform: rotateY(180deg);
   }
@@ -645,7 +656,7 @@ body {
    FOCUS VISIBLE
    ============================================================ */
 :focus-visible:not(input, textarea, select) {
-  outline: 2px solid var(--color-lime-accent);
+  outline: 2px solid var(--color-orange-accent);
   outline-offset: 3px;
   border-radius: 2px;
 }

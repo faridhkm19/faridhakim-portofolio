@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { personalInfo } from "@/app/_lib/data";
 import { Logo } from "./logo";
 import { isContactPageEnabled } from "@/app/_lib/config";
@@ -32,9 +32,9 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-3">
             <Logo id="footer-logo" />
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-lime-accent)]/30 bg-[var(--color-lime-accent)]/5 px-3 py-1">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-lime-accent)] animate-pulse" />
-              <span className="text-xs text-[var(--color-lime-accent)] font-medium">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-orange-accent)]/30 bg-[var(--color-orange-accent)]/5 px-3 py-1">
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-orange-accent)] animate-pulse" />
+              <span className="text-xs text-[var(--color-orange-accent)] font-medium">
                 Available for opportunities
               </span>
             </div>
@@ -50,7 +50,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-[var(--color-fg-muted)] underline-lime hover:text-[var(--color-fg)] transition-colors"
+                    className="text-sm text-[var(--color-fg-muted)] underline-orange hover:text-[var(--color-fg)] transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -72,7 +72,7 @@ export function Footer() {
                     id={link.id}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-sm text-[var(--color-fg-muted)] underline-lime hover:text-[var(--color-fg)] transition-colors"
+                    className="text-sm text-[var(--color-fg-muted)] underline-orange hover:text-[var(--color-fg)] transition-colors"
                   >
                     {link.label}
                   </a>
@@ -82,7 +82,7 @@ export function Footer() {
                 <a
                   href={`mailto:${personalInfo.email}`}
                   id="footer-email"
-                  className="text-sm text-[var(--color-lime-accent)] underline-lime hover:text-[var(--color-lime-accent-dark)] transition-colors"
+                  className="text-sm text-[var(--color-orange-accent)] underline-orange hover:text-[var(--color-orange-accent-dark)] transition-colors"
                 >
                   {personalInfo.email}
                 </a>

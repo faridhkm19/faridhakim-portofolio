@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -40,7 +40,7 @@ function ThemeToggle() {
       id="theme-toggle"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="relative flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-fg)] transition-all duration-300 hover:border-[var(--color-lime-accent)] hover:bg-[var(--color-lime-accent)] hover:text-[var(--color-ink-950)]"
+      className="relative flex h-9 w-9 items-center justify-center rounded-full border border-[var(--color-border)] bg-[var(--color-bg-card)] text-[var(--color-fg)] transition-all duration-300 hover:border-[var(--color-orange-accent)] hover:bg-[var(--color-orange-accent)] hover:text-white"
     >
       <motion.span
         key={isDark ? "moon" : "sun"}
@@ -100,7 +100,7 @@ export function Navbar() {
                 href={link.href}
                 id={`nav-${link.label.toLowerCase()}`}
                 className={`relative rounded-lg px-3 py-1.5 text-sm font-medium transition-colors duration-200 ${isActive
-                    ? "text-[var(--color-lime-accent)]"
+                    ? "text-[var(--color-orange-accent)]"
                     : "text-[var(--color-fg-muted)] hover:text-[var(--color-fg)]"
                   }`}
               >
@@ -108,7 +108,7 @@ export function Navbar() {
                 {isActive && (
                   <motion.span
                     layoutId="nav-active-indicator"
-                    className="absolute inset-0 rounded-lg bg-[var(--color-lime-accent)]/10"
+                    className="absolute inset-0 rounded-lg bg-[var(--color-orange-accent)]/10"
                     transition={{ type: "spring", stiffness: 350, damping: 30 }}
                   />
                 )}
@@ -168,7 +168,7 @@ export function Navbar() {
                 key={link.href}
                 href={link.href}
                 className={`rounded-lg px-3 py-2.5 text-sm font-medium transition-colors ${isActive
-                    ? "bg-[var(--color-lime-accent)]/10 text-[var(--color-lime-accent)]"
+                    ? "bg-[var(--color-orange-accent)]/10 text-[var(--color-orange-accent)]"
                     : "text-[var(--color-fg-muted)] hover:bg-[var(--color-bg-secondary)] hover:text-[var(--color-fg)]"
                   }`}
               >

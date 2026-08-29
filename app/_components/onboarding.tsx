@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
@@ -160,7 +160,7 @@ export function Onboarding() {
                     fontSize: "clamp(1.125rem, 2vw, 1.5rem)",
                     lineHeight: 1.15,
                     letterSpacing: "-0.02em",
-                    color: "var(--color-lime-accent)",
+                    color: "var(--color-orange-accent)",
                     // Prevent layout shifts
                     willChange: "transform, opacity, filter",
                   }}

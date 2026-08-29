@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -35,7 +35,7 @@ export function Logo({ id = "logo" }: { id?: string }) {
           initial={{ pathLength: 0, opacity: 0 }}
           animate={{ pathLength: 1, opacity: 1 }}
           transition={{ duration: 1.5, ease: "easeInOut" }}
-          className="transition-all duration-300 group-hover:stroke-[var(--color-lime-accent)]"
+          className="transition-all duration-300 group-hover:stroke-[var(--color-orange-accent)]"
         />
       </motion.svg>
     </Link>

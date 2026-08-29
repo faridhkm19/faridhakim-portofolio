@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { Code2, Layout, Crosshair, TrendingUp } from "lucide-react";
@@ -63,7 +63,7 @@ export function ValuesSection() {
               <div className="flip-card-inner">
                 {/* Front face — icon + title, centered */}
                 <div className="flip-card-front">
-                  <span className="text-8xl text-[var(--color-lime-accent)]">
+                  <span className="text-8xl text-[var(--color-orange-accent)]">
                     {v.icon}
                   </span>
                   <h3 className="font-heading text-lg font-semibold text-[var(--color-fg)] text-center">
@@ -73,10 +73,10 @@ export function ValuesSection() {
 
                 {/* Back face — title + description on accent bg */}
                 <div className="flip-card-back">
-                  <h3 className="font-heading text-sm font-bold text-[var(--color-ink-950)] uppercase tracking-wider">
+                  <h3 className="font-heading text-sm font-bold text-white uppercase tracking-wider">
                     {v.title}
                   </h3>
-                  <p className="text-sm text-[var(--color-ink-950)] leading-relaxed">
+                  <p className="text-sm text-white leading-relaxed">
                     {v.desc}
                   </p>
                 </div>
