@@ -100,7 +100,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                       rel="noopener noreferrer"
                       className="rounded-full bg-[var(--color-orange-accent)] px-6 py-2.5 font-heading text-sm font-semibold text-white transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-orange-accent)_40%,transparent)] hover:bg-[var(--color-orange-accent-dark)]"
                     >
-                      Download Installer 
+                      Install App 
                     </a>
                   )}
                   {project.githubRepo && (

@@ -346,9 +346,9 @@ export const projects: Project[] = [
     year: "2025",
     client: "Sasil Hijab",
     description:
-      "Art direction and layout design for a quarterly sustainability-focused lifestyle magazine.",
+      "A modern combination mark logo for SASIL HIJAB, featuring an elegant pashmina silhouette integrated with a clean wordmark.",
     longDescription:
-      "Verdure Magazine publishes quarterly content about sustainable living, design, and culture. I was responsible for art direction across two issues — establishing a editorial visual language that balances elegant typography with bold photography. Each spread was designed to feel distinct while maintaining cohesion across the publication.",
+      "The SASIL HIJAB logo perfectly balances modern minimalist aesthetics with a strong brand identity. Designed as a versatile combination mark, it elegantly integrates a clean serif wordmark with a sophisticated mascot. This mascot features a continuous line-art silhouette of a woman wearing a pashmina that cleverly forms the letter 'S' within an arched frame. This thoughtful approach captures the graceful essence of the brand while ensuring high legibility. Beyond simply following current design trends, this highly adaptable logo provides a stylish and recognizable presence that translates seamlessly across digital platforms, social media, and print materials.",
     tools: ["Adobe Ilustrator", "Figma"],
     coverImage: "/projects/gambarproject/SASILHijab/ThumbnailSasil.webp",
     images: [
@@ -365,13 +365,13 @@ export const projects: Project[] = [
     slug: "burger-in",
     title: "Burger IN",
     category: "Logo Design",
-    year: "2023",
+    year: "2022",
     client: "Burger IN",
     description:
-      "Character design and world-building illustration set for an indie mobile RPG game.",
+      "A creative lettermark logo for Burger IN, featuring rotated initials seamlessly integrated into a burger bun silhouette.",
     longDescription:
-      "Kairos Games commissioned a set of 12 character illustrations and 6 environmental pieces for their upcoming mobile RPG. I developed a unique art style that blends Southeast Asian cultural motifs with contemporary fantasy aesthetics. Each character was designed with multiple expressions and action poses for in-game use.",
-    tools: ["Adobe Ilustrator, Figma"],
+      "Designed in 2022 as an early foundational project, the Burger IN logo explores a clever lettermark concept that blends typography with illustration. The design takes the brand's initials, 'IN', rotates them 90 degrees, and seamlessly integrates them into the silhouette of a burger bun. This creative visual play not only forms a unique and striking representation of a burger but also demonstrates a smart, minimalist approach to visual identity, capturing the essence of the brand in a single memorable icon.",
+    tools: ["Adobe Illustrator", "Figma"],
     coverImage: "/projects/gambarproject/BURGERIN/ThumbnailBurgerIN.webp",
     images: [
       "/projects/gambarproject/BURGERIN/burgerin2.webp",

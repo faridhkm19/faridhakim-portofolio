@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { motion, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
@@ -127,7 +127,7 @@ export function CustomCursor() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          color: "var(--color-bg)",
+          color: "#ffffff",
         }}
         animate={{
           width: isView ? 72 : 0,
