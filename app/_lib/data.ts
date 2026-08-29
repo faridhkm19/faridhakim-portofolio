@@ -30,6 +30,8 @@ export interface Project {
   liveDemo?: string;
   /** GitHub repository URL — shown as a button on the project detail page (Web Dev / Front-End projects). */
   githubRepo?: string;
+  /** Download installer URL — shown as a button on the project detail page (Desktop Application projects). */
+  downloadInstaller?: string;
 }
 
 export interface Testimonial {
@@ -63,6 +65,86 @@ export interface TimelineItem {
 // ============================================================
 export const projects: Project[] = [
   {
+    slug: "sakala-pos-inventory",
+    title: "Sakala POS & Inventory",
+    category: "Desktop Application",
+    year: "2026",
+    client: "Seleksi Calon Asisten LePKom Universitas Gunadarma",
+    description:
+      "Sakala POS & Inventory is a desktop application that helps small businesses manage their sales and inventory.",
+    longDescription:
+      "Seduh Sakala POS is a desktop-based Point of Sale and inventory management system built specifically for a small-to-medium coffee shop. The system handles everything from cashier transactions and automatic stock deductions to role-based access control and sales reporting, all connected to a centralized MySQL database that multiple cashier computers can access simultaneously over a local network. It started as a personal project to solve a very real gap I noticed in how small coffee shops operate: sales and stock management were completely disconnected, and this project was my attempt to build something that actually fixes that.",
+    tools: ["Electron", "Node.js", "MySQL", "Java"],
+    coverImage: "/projects/gambarproject/SAKALAPOS/sakalaposthumbnail.webp",
+    images: [
+      "/projects/gambarproject/SAKALAPOS/sakalapos1.webp",
+      "/projects/gambarproject/SAKALAPOS/sakalapos2.webp",
+      "/projects/gambarproject/SAKALAPOS/sakalapos3.webp",
+      "/projects/gambarproject/SAKALAPOS/sakalapos4.webp",
+      "/projects/gambarproject/SAKALAPOS/sakalapos5.webp",
+      "/projects/gambarproject/SAKALAPOS/sakalapos6.webp",
+      "/projects/gambarproject/SAKALAPOS/sakalapos7.webp",
+      "/projects/gambarproject/SAKALAPOS/sakalapos8.webp",
+      "/projects/gambarproject/SAKALAPOS/sakalapos9.webp",
+    ],
+    featured: true,
+    color: "#0ea5e9",
+    programLabel: "Program",
+    downloadInstaller: "https://github.com/faridhkm19/sakala_pos/releases/download/v1.0.0/Sakala.POS-1.0.0.exe",
+    githubRepo: "https://github.com/faridhkm19/sakala_pos",
+    techStack: {
+      backend: ["Java 17+", "JDBC", "MySQL 8.0", "HikariCP", "jbcrypt", "Apache Maven"],
+      frontend: ["JavaFX 21", "FXML", "JavaFX CSS"],
+    },
+    contentBlocks: [
+      {
+        type: "text",
+        heading: "About this project",
+        body: "Seduh Sakala POS is a desktop-based Point of Sale and inventory management system built specifically for a small-to-medium coffee shop. The system handles everything from cashier transactions and automatic stock deductions to role-based access control and sales reporting, all connected to a centralized MySQL database that multiple cashier computers can access simultaneously over a local network. It started as a personal project to solve a very real gap I noticed in how small coffee shops operate: sales and stock management were completely disconnected, and this project was my attempt to build something that actually fixes that.",
+      },
+      {
+        type: "gallery",
+        layout: "featured-plus-two",
+        images: [
+          "/projects/gambarproject/SAKALAPOS/sakalapos5.webp",
+          "/projects/gambarproject/SAKALAPOS/sakalapos2.webp",
+          "/projects/gambarproject/SAKALAPOS/sakalapos6.webp",
+        ],
+      },
+      {
+        type: "text",
+        heading: "The Problem",
+        body: "Small coffee shops like Seduh Sakala typically record sales on a simple POS while managing ingredient stock separately, either on paper or in a spreadsheet. This disconnect creates a chain of problems: stock is only counted at the end of the day or when a barista reaches for an ingredient and finds it empty mid-rush, cashier staff and owners share the same access level with no separation of permissions, running two cashier stations means two separate records with no single source of truth, and without structured transaction data there is no reliable way to know which menu items drive revenue or how sales trend over time.",
+      },
+      {
+        type: "gallery",
+        layout: "landscape-single",
+        images: [
+          "/projects/gambarproject/SAKALAPOS/sakalapos8.webp",
+        ],
+      },
+      {
+        type: "gallery",
+        layout: "landscape-single",
+        images: [
+          "/projects/gambarproject/SAKALAPOS/sakalapos9.webp",
+        ],
+      },
+      {
+        type: "text",
+        heading: "Key Features",
+        body: "Cashiers work from a real-time grid transaction screen with automatic receipt generation. Every sale triggers recipe-based stock deductions across all required ingredients inside a single atomic transaction, with a full rollback if anything fails. Low-stock ingredients are visually flagged in the inventory table, and admins receive a warning dialog on login. The system enforces role-based access at the service layer: admins handle menus, ingredients, staff, and reports, while cashiers are limited to transactions and their own daily summary. Multiple cashier stations connect to a centralized MySQL server over LAN using HikariCP connection pooling, and the app ships as a self-contained Windows installer with the Java runtime bundled in.",
+      },
+      {
+        type: "gallery",
+        layout: "landscape-single",
+        images: [
+          "/projects/gambarproject/SAKALAPOS/sakalapos7.webp",
+        ],
+      },
+    ],
+  },
+  {
     slug: "ui-ux-resika",
     title: "UI/UX Resika",
     category: ["UI/UX Design"],
@@ -89,7 +171,7 @@ export const projects: Project[] = [
       {
         type: "text",
         heading: "About this project",
-        body: "Resika App is a mobile application that connects households with waste bank operators to make managing household waste simpler and more transparent. Instead of relying on manual coordination with little visibility, users can request a waste pickup, track it in real time, and earn coins by reporting recycled items, which can later be exchanged for vouchers. As the UI/UX Designer on this project, I worked with the team from early research through to a high fidelity interactive prototype covering the full core flow, from requesting and tracking a pickup to reporting recycled items and redeeming coins.",
+        body: "Resika App is a mobile application designed to connect households with waste bank operators and make household waste management more accessible, transparent, and rewarding. The app allows users to request waste pickups, track the collection process, report recyclable items, and earn coins that can be exchanged for vouchers. As the UI/UX Designer, I contributed throughout the design process, from initial research and problem identification to creating a high fidelity interactive prototype covering the core user journey, including requesting and tracking waste pickups, reporting recycled items, and redeeming rewards.",
       },
       {
         type: "gallery",
@@ -102,7 +184,7 @@ export const projects: Project[] = [
       {
         type: "text",
         heading: "The Problem",
-        body: "Household waste management in Indonesia still relies heavily on manual, informal coordination between residents and waste banks, resulting in limited accessibility, little to no incentive for people to sort and recycle their waste, and no real way to track the process once waste is handed over. Early research confirmed this gap firsthand — users often had no visibility into whether their waste was actually picked up, and saw no clear benefit in sorting recyclables when nothing came back in return. This became the foundation for Resika App, designed around three core needs: easier coordination, transparent tracking, and a reward system that gives real value back to users.",
+        body: "Household waste management in Indonesia still relies heavily on manual coordination between residents and waste banks, making the process less accessible and transparent. Early research showed that users often had limited visibility into the status of their waste pickups and lacked clear incentives to sort and recycle their waste. These challenges highlighted three key needs that shaped Resika App: simpler coordination between users and waste banks, transparent tracking throughout the collection process, and a reward system that provides tangible value for users who actively participate in recycling.",
       },
       {
         type: "gallery",
@@ -162,7 +244,7 @@ export const projects: Project[] = [
     galleryLayout: "square-grid",
     programLabel: "Program",
     liveDemo: "https://tracker-io-three.vercel.app",
-    githubRepo: "https://github.com/faridhkm19/Tracker.io.git",
+    githubRepo: "https://github.com/faridhkm19/Tracker.io",
     techStack: {
       backend: ["Node.js", "Express", "MySQL", "JWT", "bcrypt"],
       frontend: ["Vanilla Javascript", "HTML5", "CSS3", "Chart JS"],
@@ -230,7 +312,7 @@ export const projects: Project[] = [
       "/projects/gambarproject/SMBFest/gambar6.webp",
       "/projects/gambarproject/SMBFest/gambar7.webp",
     ],
-    featured: true,
+    featured: false,
     color: "#0ea5e9", // Brand Identity (Sky-500)
     galleryLayout: "square-grid",
   },
@@ -299,25 +381,6 @@ export const projects: Project[] = [
     ],
     featured: false,
     color: "#0284c7", // Logo Design (Sky-600)
-  },
-  {
-    slug: "pulse-brand",
-    title: "Project 7",
-    category: "Brand Identity",
-    year: "2024",
-    client: "Pulse Fitness",
-    description:
-      "Dynamic brand identity for a boutique fitness studio targeting urban professionals.",
-    longDescription:
-      "Pulse Fitness needed branding that embodied energy, movement, and modern fitness culture. I created a bold logotype with kinetic visual language, an energetic color system, and a full suite of branded touchpoints from apparel to digital assets. The brand has since been applied across 3 studio locations.",
-    tools: ["Adobe Illustrator", "Figma", "Adobe Photoshop"],
-    coverImage: "/images/projects/pulse-cover.jpg",
-    images: [
-      "/images/projects/pulse-1.jpg",
-      "/images/projects/pulse-2.jpg",
-    ],
-    featured: false,
-    color: "#0ea5e9", // Brand Identity (Sky-500)
   },
   {
     slug: "atlas-dashboard",

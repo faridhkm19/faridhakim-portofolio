@@ -46,7 +46,7 @@ function Hero() {
             }}
           >
             <Image
-              src="/projects/gambarproject/FotoFaridHakim.webp"
+              src="/projects/gambarproject/PhotoFarid.png"
               alt="Farid Hakim — Web Developer & Graphic Designer"
               fill
               priority
@@ -312,6 +312,7 @@ const disciplinesBack = [
   "Logo Design",
   "UI/UX Design",
   "Brand Identity",
+  "Marketing Design",
 ];
 
 const disciplinesFront = [
@@ -319,6 +320,7 @@ const disciplinesFront = [
   "Database Management",
   "Front-End Development",
   "Mobile App Development",
+  "Desktop Application",
 ];
 
 // Repeat items enough times to guarantee seamless loop at any viewport width
@@ -388,7 +390,7 @@ function CTASection() {
               Have a project in mind?
             </h2>
             <p className="relative mt-4 mx-auto max-w-md text-[var(--color-fg-muted)]">
-              Available for freelance, internships, and full-time roles.
+              Available for freelance and internships. <br />
               Let&rsquo;s create something meaningful together.
             </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">

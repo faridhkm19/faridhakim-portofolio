@@ -76,7 +76,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             {(() => {
               const cats = Array.isArray(project.category) ? project.category : [project.category];
               const isWebProject = cats.some(
-                (c) => c === "Web Development" || c === "Front-End Development"
+                (c) => c === "Web Development" || c === "Front-End Development" || c === "Desktop Application"
               );
               if (!isWebProject) return null;
               return (
@@ -89,7 +89,18 @@ export default async function ProjectDetailPage({ params }: Props) {
                       rel="noopener noreferrer"
                       className="rounded-full bg-[var(--color-lime-accent)] px-6 py-2.5 font-heading text-sm font-semibold text-[var(--color-ink-950)] transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-lime-accent)_40%,transparent)] hover:bg-[var(--color-lime-accent-dark)]"
                     >
-                      Live Demo
+                      Live Demo 
+                    </a>
+                  )}
+                  {project.downloadInstaller && (
+                    <a
+                      href={project.downloadInstaller}
+                      id={`project-download-installer-${project.slug}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="rounded-full bg-[var(--color-lime-accent)] px-6 py-2.5 font-heading text-sm font-semibold text-[var(--color-ink-950)] transition-all duration-300 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--color-lime-accent)_40%,transparent)] hover:bg-[var(--color-lime-accent-dark)]"
+                    >
+                      Download Installer 
                     </a>
                   )}
                   {project.githubRepo && (

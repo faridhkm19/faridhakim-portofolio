@@ -12,7 +12,8 @@ export type FilterCategory =
   | "UI/UX Design"
   | "Brand Identity"
   | "Marketing Design"
-  | "Logo Design";
+  | "Logo Design"
+  | "Desktop Application";
 
 export const FILTER_CATEGORIES: FilterCategory[] = [
   "All",
@@ -22,6 +23,7 @@ export const FILTER_CATEGORIES: FilterCategory[] = [
   "Brand Identity",
   "Marketing Design",
   "Logo Design",
+  "Desktop Application",
 ];
 
 export interface ProjectFilterProps {
