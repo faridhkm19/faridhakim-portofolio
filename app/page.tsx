@@ -374,10 +374,6 @@ function CTASection() {
             <h2 className="font-heading text-3xl font-bold text-[var(--color-fg)] md:text-4xl">
               Have a project in mind?
             </h2>
-            <p className="relative mt-4 mx-auto max-w-md text-[var(--color-fg-muted)]">
-              Available for freelance and internships. <br />
-              Let&rsquo;s create something meaningful together.
-            </p>
             <div className="relative mt-8 flex flex-wrap items-center justify-center gap-4">
               {/* Get In Touch button — hidden when isContactPageEnabled is false (see config.ts) */}
               {isContactPageEnabled && (

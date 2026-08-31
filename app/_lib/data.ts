@@ -431,7 +431,7 @@ export const testimonials: Testimonial[] = [
     company: "",
     avatar: "",
     quote:
-      "Farid mampu menerjemahkan visi acara kami ke dalam identitas visual yang luar biasa. Pendekatannya yang menggabungkan elemen budaya dengan visual modern tidak hanya memukau audiens, tetapi juga memberikan karakter yang sangat kuat pada keseluruhan branding SMB Fest Spectro.",
+      "Farid sukses menerjemahkan visi acara kami menjadi identitas visual yang luar biasa. Paduan elemen budaya dan gaya modernnya membuat branding SMB Fest Spectro tampil berkarakter dan memukau audiens.",
   },
   {
     id: "t2",
@@ -440,7 +440,7 @@ export const testimonials: Testimonial[] = [
     company: "",
     avatar: "",
     quote:
-      "Kolaborasi yang sangat profesional. Eksekusi desain untuk kampanye PPDB kami terstruktur dengan sangat baik, menghasilkan materi promosi yang modern dan komunikatif di berbagai platform digital maupun cetak, sehingga sukses meningkatkan daya tarik sekolah.",
+      "Kerja sama yang sangat profesional! Desain kampanye PPDB dieksekusi dengan rapi, menghasilkan materi promosi yang modern dan sukses meningkatkan daya tarik sekolah di berbagai platform.",
   },
   {
     id: "t3",
@@ -449,7 +449,7 @@ export const testimonials: Testimonial[] = [
     company: "",
     avatar: "",
     quote:
-      "Keahlian riset dan perancangan UI/UX yang ditunjukkan sangat impresif. Prototipe interaktif yang dihasilkan tidak sekadar memanjakan mata, namun secara fundamental berhasil menyederhanakan alur navigasi yang kompleks menjadi pengalaman pengguna yang sangat intuitif.",
+      "Skill riset dan UI/UX-nya sangat impresif. Prototipe yang dibuat bukan cuma memanjakan mata, tapi juga sukses menyederhanakan navigasi yang kompleks jadi pengalaman pengguna yang lebih intuitif.",
   },
 ];
 

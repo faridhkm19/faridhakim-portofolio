@@ -66,7 +66,7 @@ export default function AboutPage() {
           </div>
 
           {/* Right: Avatar */}
-          <Reveal direction="left" className="flex justify-center lg:justify-end">
+          <Reveal direction="left" className="flex justify-center lg:justify-end lg:pr-4">
             <div className="relative h-80 w-64 md:h-96 md:w-72">
               {/* Decorative border offset */}
               <div className="absolute -right-4 -bottom-4 h-full w-full rounded-2xl border-2 border-[var(--color-orange-accent)]/30" />

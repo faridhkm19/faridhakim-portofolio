@@ -1,4 +1,4 @@
-﻿import Link from "next/link";
+import Link from "next/link";
 import { personalInfo } from "@/app/_lib/data";
 import { Logo } from "./logo";
 import { isContactPageEnabled } from "@/app/_lib/config";
@@ -32,12 +32,13 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-3">
             <Logo id="footer-logo" />
-            <div className="inline-flex items-center gap-2 rounded-full border border-[var(--color-orange-accent)]/30 bg-[var(--color-orange-accent)]/5 px-3 py-1">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--color-orange-accent)] animate-pulse" />
-              <span className="text-xs text-[var(--color-orange-accent)] font-medium">
-                Available for opportunities
-              </span>
-            </div>
+            <a
+              href={`mailto:${personalInfo.email}`}
+              id="footer-email"
+              className="inline-block text-base font-medium text-[var(--color-orange-accent)] underline-orange hover:text-[var(--color-orange-accent-dark)] transition-colors"
+            >
+              {personalInfo.email}
+            </a>
           </div>
 
           {/* Nav */}
@@ -78,26 +79,14 @@ export function Footer() {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href={`mailto:${personalInfo.email}`}
-                  id="footer-email"
-                  className="text-sm text-[var(--color-orange-accent)] underline-orange hover:text-[var(--color-orange-accent-dark)] transition-colors"
-                >
-                  {personalInfo.email}
-                </a>
-              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-[var(--color-border)] pt-6 sm:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-center gap-3 border-t border-[var(--color-border)] pt-6 sm:flex-row">
           <p className="text-xs text-[var(--color-fg-subtle)]">
             © {year} Farid Hakim. All rights reserved.
-          </p>
-          <p className="text-xs text-[var(--color-fg-subtle)]">
-            Developed and Designed in Jakarta, Indonesia
           </p>
         </div>
       </div>
